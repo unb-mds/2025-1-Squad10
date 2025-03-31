@@ -25,4 +25,4 @@ Além dessas ferramentas, foram examinadas outras abordagens para manter registr
 - [Documentação do MkDocs](https://www.mkdocs.org/)  
 - [Site do Docusaurus](https://docusaurus.io/)  
 
-Se precisar de mais detalhes sobre alguma dessas ferramentas, estou à disposição! 🚀
+
