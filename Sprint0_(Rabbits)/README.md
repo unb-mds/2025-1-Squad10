@@ -1,0 +1,1 @@
+Pasta criada para reunir os conteúdos estudado pelos membros.
