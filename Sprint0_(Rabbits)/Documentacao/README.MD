@@ -5,7 +5,9 @@
 ## **Objetivo**  
 Este estudo visa compreender formas de estruturar registros técnicos utilizando **Markdown**, além de explorar maneiras de disponibilizá-los na web através do **GitHub Pages**. Também foi analisado o processo de automação para publicação contínua utilizando **GitHub Actions**.  
 
-Além dessas ferramentas, foram examinadas outras abordagens para manter registros organizados e acessíveis.  
+Outro ponto investigado foi a automação do processo de publicação contínua utilizando GitHub Actions, permitindo que atualizações sejam implementadas de forma eficiente e sem intervenção manual.
+
+Além dessas ferramentas, também foram consideradas outras abordagens para manter registros técnicos organizados e acessíveis, incluindo wikis internas, gerenciadores de documentação como MkDocs e Docusaurus, e boas práticas na escrita e versionamento de documentação.
 
 ## **Ferramentas e Abordagens Estudadas**  
 
