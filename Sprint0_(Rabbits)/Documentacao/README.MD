@@ -3,11 +3,18 @@
 **Fase do Projeto:** Sprint 0  
 
 ## **Objetivo**  
-Este estudo visa compreender formas de estruturar registros técnicos utilizando **Markdown**, além de explorar maneiras de disponibilizá-los na web através do **GitHub Pages**. Também foi analisado o processo de automação para publicação contínua utilizando **GitHub Actions**.  
+A documentação técnica é essencial para garantir a organização e a acessibilidade das informações em projetos de software. Este estudo investiga diferentes estratégias para criar, manter e publicar registros técnicos de forma eficiente.
 
-Outro ponto investigado foi a automação do processo de publicação contínua utilizando GitHub Actions, permitindo que atualizações sejam implementadas de forma eficiente e sem intervenção manual.
+Ferramentas e Tecnologias Analisadas
+🔹 Markdown – Linguagem de marcação leve usada para escrever documentos estruturados de maneira simples e legível. Seu uso facilita a criação de documentação padronizada, permitindo a formatação de textos, inserção de links, imagens e tabelas sem a necessidade de editores avançados.
 
-Além dessas ferramentas, também foram consideradas outras abordagens para manter registros técnicos organizados e acessíveis, incluindo wikis internas, gerenciadores de documentação como MkDocs e Docusaurus, e boas práticas na escrita e versionamento de documentação.
+🔹 GitHub Pages – Serviço gratuito do GitHub que permite hospedar páginas estáticas diretamente de um repositório. Ele é amplamente utilizado para publicar documentações, blogs técnicos e sites institucionais de maneira simples, aproveitando o versionamento do Git para gerenciar atualizações.
+
+🔹 GitHub Actions – Ferramenta de automação que permite configurar fluxos de trabalho dentro do GitHub. No contexto da documentação, ela pode ser usada para automatizar a publicação contínua, garantindo que qualquer atualização nos arquivos Markdown seja processada e disponibilizada automaticamente no GitHub Pages.
+
+Além dessas tecnologias, foram exploradas alternativas para manter registros técnicos bem organizados, como o uso de wikis internas e frameworks especializados, incluindo MkDocs e Docusaurus, que oferecem funcionalidades avançadas para a criação de documentações interativas.
+
+O objetivo desse estudo foi identificar as melhores práticas para garantir que a documentação seja clara, acessível e fácil de manter ao longo do ciclo de vida do projeto.
 
 ## **Ferramentas e Abordagens Estudadas**  
 
@@ -26,5 +33,6 @@ Além dessas ferramentas, também foram consideradas outras abordagens para mant
 - [Introdução ao GitHub Actions](https://github.com/features/actions)  
 - [Documentação do MkDocs](https://www.mkdocs.org/)  
 - [Site do Docusaurus](https://docusaurus.io/)  
+- [https://guia.dev/pt/pillars/software-architecture/technical-documentation.html/)
 
 
