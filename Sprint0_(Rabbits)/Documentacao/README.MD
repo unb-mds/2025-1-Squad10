@@ -1,5 +1,5 @@
 # **Investigação sobre Métodos de Documentação**  
-**Responsável:** @brwnds  
+**Responsável:** Brenda Beatriz Maciel da Silva
 **Fase do Projeto:** Sprint 0  
 
 ## **Objetivo**  
