@@ -34,6 +34,6 @@ O objetivo desse estudo foi identificar as melhores práticas para garantir que 
 - [Introdução ao GitHub Actions](https://github.com/features/actions)  
 - [Documentação do MkDocs](https://www.mkdocs.org/)  
 - [Site do Docusaurus](https://docusaurus.io/)  
-- [https://guia.dev/pt/pillars/software-architecture/technical-documentation.html/)
+- [Documentação Técnica](https://guia.dev/pt/pillars/software-architecture/technical-documentation.html/)
 
 
