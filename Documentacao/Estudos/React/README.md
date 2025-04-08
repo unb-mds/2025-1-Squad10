@@ -2,6 +2,8 @@
 
 # 📘 Guia básico de React
 
+**Responsável:** Eduarda Domingos Rodrigues - 231026699
+
 React é uma biblioteca para a criação de interfaces de usuário. Atualmente, é uma das principais ferramentas utilizadas no desenvolvimento web moderno.
 
 Oficialmente é mantido pelo Facebook, com manutenção feita por uma equipe de 8 pessoas. É utilizado em grandes projetos como o próprio Facebook, Twitter, WhatsApp e até mesmo na Netflix.
