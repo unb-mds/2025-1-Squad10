@@ -1,4 +1,4 @@
-#***Git***
+#**Git**
 
 
 Git é um software de versionamento (***VCS - Version Control System***) utilizado para relizar o controle das versões de um software com o decorrer de implementações no mesmo. É o software responsável por gerenciar todas as alterações e estados realizados no código fonte no repositório local (dispositivo do desenvolvedor).
@@ -22,7 +22,7 @@ No mundo de desenvolvimento de software, existem dois tipos de versionamento:
 Onde o Git faz parte do conjunto de VCS's do formato distribuído.
 
 
-##***Vantagens de utilizar Git:***
+##**Vantagens de utilizar Git:**
 
 
 - Controle de histórico;
@@ -47,7 +47,7 @@ GitHub é uma plataforma social para programadores onde é possível armazenar d
 - GitHub Desktop, que traz uma interface amigável para manipular Git.
 
 
-#***Dicionário Git/GitHub***
+#**Dicionário Git/GitHub**
 
 
 ***Repositório Local***
@@ -98,19 +98,19 @@ GitHub é uma plataforma social para programadores onde é possível armazenar d
    - Junção de implementações, normalmente associadas a branches.
 
 
-#***Instalação***
+#**Instalação**
 
 
 Vale ressaltar que o projeto que será desenvolvido em dispositivos que contém o sistema operacional Linux Mint e que utilizaremos como padrão a IDE Visual Studio Code.
 
 
-##***Instalalçao do Git***
+##**Instalalçao do Git**
 
 
 No terminal utilizamos o seguinte comando para realizar a instalação do Git: "sudo apt-get install git"
 
 
-##***Instalação do GitHub Desktop***
+##**Instalação do GitHub Desktop**
 
 
 Para instalar o GitHub Desktop em uma distribuição Linux entre no seguinte repositório: [Repositório Shitfkey](https://github.com/shiftkey/desktop/releases)
