@@ -22,15 +22,33 @@ Para iniciar uma aplicação React, é necessário importar duas bibliotecas pri
 Essas funcionalidades são o que fazem o React ser tão poderoso e popular no desenvolvimento de interfaces web modernas.
 
 ## 👋 Exemplo básico: Hello World em React
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CDFTV – React</title>
 
-```jsx
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+  <!-- Importa o React -->
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
 
-function App() {
-  return <h1>Hello, world!</h1>;
-}
+  <!-- Importa o ReactDOM, que faz a ligação com o DOM da página -->
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+  <!-- Importa o Babel, que converte JSX em JavaScript puro no navegador -->
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
 
+  <!-- Div onde o conteúdo React será exibido -->
+  <div id="app"></div>
+
+  <!-- Script com JSX que será interpretado pelo Babel -->
+  <script type="text/babel">
+    ReactDOM.render(
+      <h1>Hello CDF!</h1>,
+      document.querySelector('#app')
+    );
+  </script>
+
+</body>
+</html>
