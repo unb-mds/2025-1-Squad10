@@ -46,10 +46,10 @@ Construir uma plataforma de geração automatizada de relatórios financeiros p�
 
 | Papel                   | Responsável                                      | Atividades Principais                                            |
 |-------------------------|--------------------------------------------------|------------------------------------------------------------------|
-| Stakeholder Principal   | IPEA                                             | Validação de requisitos, definição de escopo e uso final         |
-| Product Owner           | Mentor João                                      | Priorização de funcionalidades, gestão do backlog, alinhamento   |
-| Dev Team                | Dev Python, Cientista de Dados, Eng. de Dados   | Desenvolvimento, testes, integração e deploy da solução          |
-| UX/UI Designer          | Designer do time ou colaborador externo         | Prototipação de interfaces e testes de usabilidade               |
-| Engenheiro de Dados     | Engenheiro do time                               | Construção de pipelines de dados, ETL e manutenção da base       |
-| Cientista de Dados      | Cientista do time                                | Modelagem NLP, análise estatística e extração de insights        |
-| Usuário Final           | Gestores públicos                                | Consumo dos relatórios e análise de indicadores e alertas        |
+| Stakeholder Principal   | XXXXXXXXXXXX                                             | Validação de requisitos, definição de escopo e uso final         |
+| Product Owner           | XXXXXXXXXXXX                                     | Priorização de funcionalidades, gestão do backlog, alinhamento   |
+| Dev Team                | XXXXXXXXXXXX    | Desenvolvimento, testes, integração e deploy da solução          |
+| UX/UI Designer          | XXXXXXXXXXXX          | Prototipação de interfaces e testes de usabilidade               |
+| Engenheiro de Dados     | XXXXXXXXXXXX                                | Construção de pipelines de dados, ETL e manutenção da base       |
+| Cientista de Dados      | XXXXXXXXXXXX                                 | Modelagem NLP, análise estatística e extração de insights        |
+| Usuário Final           | XXXXXXXXXXXX                                | Consumo dos relatórios e análise de indicadores e alertas        |
