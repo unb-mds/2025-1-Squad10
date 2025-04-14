@@ -1,6 +1,6 @@
 # 📄 Resumo da Ata – Sprint 0 (Kick Off)
 
-📅 **Data**: [30/03/2025]  
+📅 **Data**: [31/03/2025]  
 🕒 **Horário**: 09h40 – 10h10 (presencial) | 21h00 – 21h15 (remoto, diário) | 20h30 – 21h30 (domingo, Discord)  
 📍 **Local**: Universidade de Brasília (presencial) 
 ✍️ **Responsável pela ata**: @Brwnds   
