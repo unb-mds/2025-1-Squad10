@@ -1,8 +1,8 @@
 # ***Arquitetura do Projeto***
 
-Optamos por uma arquitetura monolítica modular para o projeto de geração de relatórios financeiros automáticos porque ela oferece um ótimo equilíbrio entre simplicidade e escalabilidade. Essa abordagem permite que toda a aplicação seja desenvolvida e mantida dentro de um único repositório, facilitando o controle e a colaboração entre as equipes de desenvolvimento. Ao mesmo tempo, ela oferece uma estrutura modular que organiza o código de maneira eficiente, preparando o sistema para evoluir de forma organizada à medida que os requisitos se expandem.
+Optamos por um modelo arquitetural monolítico modular para o projeto de geração de relatórios financeiros automáticos porque ele oferece um ótimo equilíbrio entre simplicidade e escalabilidade. Essa abordagem permite que toda a aplicação seja desenvolvida e mantida dentro de um único repositório, facilitando o controle e a colaboração entre as equipes de desenvolvimento. Ao mesmo tempo, ela oferece uma estrutura modular que organiza o código de maneira eficiente, preparando o sistema para evoluir de forma organizada à medida que os requisitos se expandem.
 
-* A aplicação de padrões arquiteturais clássicos foi fundamental para garantir que cada parte do sistema tivesse uma responsabilidade clara, tornando o desenvolvimento e a manutenção mais ágeis.
+A aplicação de padrões arquiteturais clássicos foi fundamental para garantir que cada parte do sistema tivesse uma responsabilidade clara, tornando o desenvolvimento e a manutenção mais ágeis:
 
 * A Arquitetura em Camadas organiza o sistema de maneira que cada camada (apresentação, controle, lógica de negócio e acesso a dados) tenha um papel específico, o que facilita a manutenção e os testes sem que mudanças em uma camada impactem outras.
 
