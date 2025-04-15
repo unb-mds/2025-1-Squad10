@@ -141,3 +141,4 @@
     </tr>
   </tbody>
 </table>
+<a href="https://www.figma.com/design/cma7IBi9KuNp0CFiAtjihe/Documentacao?node-id=13-829&m=dev"> <img href="../../src/IMG/README/print"/> </a>
