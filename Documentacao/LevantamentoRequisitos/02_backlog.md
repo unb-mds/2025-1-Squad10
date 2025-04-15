@@ -140,5 +140,6 @@
       <td style="border: 1px solid black;">Permite que o código seja disponibilizado como open-source, facilitando a replicação por outras instituições.</td>
     </tr>
   </tbody>
+  <a href="https://www.figma.com/design/cma7IBi9KuNp0CFiAtjihe/Documentacao?node-id=13-829&m=dev"> <img href="../../src/IMG/README/print"/> </a>
 </table>
-<a href="https://www.figma.com/design/cma7IBi9KuNp0CFiAtjihe/Documentacao?node-id=13-829&m=dev"> <img href="../../src/IMG/README/print"/> </a>
+
