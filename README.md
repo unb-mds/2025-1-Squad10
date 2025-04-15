@@ -22,7 +22,7 @@ Special thank you for all people that contributed for this project.
   <tr>
     <td align="center">
       <a href="https://github.com/EricAraujoBsB">
-        <img src="src/img/README/Eric Gomes.jpeg" width="33%;" alt="Fernanda Kipper Profile Picture"/><br>
+        <img src="Documentacao/assets/Colabs/Eric Gomes.jpeg" width="33%;" alt="Fernanda Kipper Profile Picture"/><br>
         <sub>
           <b>Eric Gomes de Araujo</b>
         </sub>
@@ -30,7 +30,7 @@ Special thank you for all people that contributed for this project.
     </td>
     <td align="center">
       <a href="https://github.com/Lithuania0">
-        <img src="src/img/README/Mayra Lithuania.jpeg" width="33%;" alt="Mayra Lithuania"/><br>
+        <img src="Documentacao/assets/Colabs/Mayra Lithuania.jpeg" width="33%;" alt="Mayra Lithuania"/><br>
         <sub>
           <b>Mayra Lithuania</b>
         </sub>
@@ -38,7 +38,7 @@ Special thank you for all people that contributed for this project.
     </td>
     <td align="center">
       <a href="https://github.com/Brwnds">
-        <img src="src/img/README/Brenda.jpeg" width="33%;" alt="Brenda Beatriz"/><br>
+        <img src="Documentacao/assets/Colabs/Brenda.jpeg" width="33%;" alt="Brenda Beatriz"/><br>
         <sub>
           <b>Brenda Beatriz</b>
         </sub>
@@ -48,7 +48,7 @@ Special thank you for all people that contributed for this project.
   <tr>
     <td align="center">
       <a href="https://github.com/GFlyan">
-        <img src="src/img/README/Guilherme Flyan.jpeg" width="33%;" alt="Guilherme Flyan"/><br>
+        <img src="Documentacao/assets/Colabs/Guilherme Flyan.jpeg" width="33%;" alt="Guilherme Flyan"/><br>
         <sub>
           <b>Guilherme Flyan</b>
         </sub>
@@ -56,7 +56,7 @@ Special thank you for all people that contributed for this project.
     </td>
     <td align="center">
       <a href="https://github.com/eduardar0">
-        <img src="src/img/README/Eduarda Rodrigues.jpeg" width="33%;" alt="Eduarda Rodrigues"/><br>
+        <img src="Documentacao/assets/Colabs/Eduarda Rodrigues.jpeg" width="33%;" alt="Eduarda Rodrigues"/><br>
         <sub>
           <b>Eduarda Rodrigues</b>
         </sub>
@@ -64,7 +64,7 @@ Special thank you for all people that contributed for this project.
     </td>
     <td align="center">
       <a href="https://github.com/mariadenis">
-        <img src="src/img/README/Maria Eduarda.jpeg" width="33%;" alt="Maria Eduarda"/><br>
+        <img src="Documentacao/assets/Colabs/Maria Eduarda.jpeg" width="33%;" alt="Maria Eduarda"/><br>
         <sub>
           <b>Maria Eduarda</b>
         </sub>
@@ -74,7 +74,7 @@ Special thank you for all people that contributed for this project.
   <tr>
     <td align="center">
       <a href="https://github.com/gabegmbr">
-        <img src="src/img/README/Gabriel Maciel.jpeg" width="50%;" alt="Gabriel Maciel"/><br>
+        <img src="Documentacao/assets/Colabs/Gabriel Maciel.jpeg" width="50%;" alt="Gabriel Maciel"/><br>
         <sub>
           <b>Gabriel Maciel</b>
         </sub>
@@ -82,7 +82,7 @@ Special thank you for all people that contributed for this project.
     </td>
     <td align="center">
       <a href="https://github.com/Marjoriemitzi">
-        <img src="src/img/README/Marjorie.jpeg" width="50%;" alt="Marjorie Mitzi"/><br>
+        <img src="Documentacao/assets/Colabs/Marjorie.jpeg" width="50%;" alt="Marjorie Mitzi"/><br>
         <sub>
           <b>Marjorie Mitzi</b>
         </sub>
