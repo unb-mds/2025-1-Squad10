@@ -1,6 +1,4 @@
-# Gerando o arquivo Markdown com os requisitos
 
-requisitos_md = """
 # Requisitos de Software: Sistema Inteligente para Análise Automatizada de Notícias e Indicadores do IPEA
 
 ## 1. Visão Geral
