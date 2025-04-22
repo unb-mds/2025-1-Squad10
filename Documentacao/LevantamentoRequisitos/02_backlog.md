@@ -143,6 +143,8 @@
 </table>
 
 ---
+## 🗺️ Story Map
+![Story Map](https://github.com/unb-mds/2025-1-Squad10/blob/main/Documentacao/assets/StoryMap.png?raw=true)
 
 ## Diagrama Backlog (Chuva de Ideias)
 <a href="https://www.figma.com/team_invite/redeem/JtjJg0xfYUI6RE1FBSzOlM"><img src="../assets/backlog.png" width="100%;" alt="Backlog"/></a>
