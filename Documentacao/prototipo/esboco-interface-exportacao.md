@@ -1,37 +1,52 @@
-# Tela de Exportação de Relatórios 📄
+# Tela de Exportação de Relatórios
 
-## 📌 Descrição
+Esta tela faz parte da sprint atual do projeto de sistema de relatórios inteligentes IPEA. A funcionalidade foi prototipada com foco em oferecer uma interface clara, intuitiva e funcional para exportação de dados.
 
-Esta é a **primeira versão** da tela de exportação de relatórios do projeto **Relatórios Inteligentes IPEA**. A interface é acessada ao clicar em **"Relatórios"** na sidebar lateral esquerda da aplicação.
+## 📌 Funcionalidade
 
-O objetivo principal desta tela é permitir que o usuário selecione um intervalo de tempo, tipos de dados e o formato de exportação do relatório, de forma simples e intuitiva.
+A tela de **Exportação de Relatórios** permite que o usuário selecione um período, tipo de dados e formato de visualização para gerar relatórios personalizados.
 
-## 📸 Captura de tela atual
+### Recursos incluídos:
 
-![Tela de Exportação](/Documentacao/assets/exportacao.png) <!-- Atualize com o caminho correto no repositório -->
+- **Seleção de Período**  
+  O usuário pode selecionar um intervalo entre dois meses para exportar os dados desejados.
 
-## ✅ Funcionalidades Implementadas
+- **Filtros por Tipo de Dados**  
+  Os relatórios podem conter:
+  - Receitas
+  - Despesas
+  - Alertas
 
-- Seleção de período: data inicial e final.
-- Filtro por tipo de dado: Receitas, Despesas e Alertas.
-- Escolha de formato para visualização/exportação (atualmente apenas PDF).
-- Botão para exportar o relatório.
+- **Formato de Visualização**  
+  Atualmente disponível apenas o formato **PDF**, com possibilidade futura de adicionar CSV ou XLSX.
 
-## ⚠️ Pontos a Melhorar
+- **Botão de Exportação**  
+  Após escolher os filtros desejados, o usuário pode clicar em **Exportar relatório** para gerar e fazer download do arquivo.
 
-- Implementar a lógica de exportação real.
-- Adicionar mensagens de erro/sucesso.
-- Ajustar estilos e responsividade.
-- Validar seleção dos dados antes da exportação.
+## 🎨 Design
 
-## 🚧 Status
+A interface segue o tema escuro do sistema com elementos de destaque em roxo para reforçar as ações ativas e importantes.
 
-🟠 **Em desenvolvimento** — esta é apenas uma versão inicial da tela.  
-Será melhorada com mais funcionalidades, integração com backend e refino visual nas próximas versões.
+- Menu lateral com navegação entre páginas
+- Campos com preenchimento elegante e intuitivo
+- Responsividade planejada para diferentes tamanhos de tela (a ser implementada)
 
-## 📁 Localização no Projeto
+## 📁 Status da Sprint
 
-- Navegue até **"Relatórios"** na sidebar para visualizar a tela de exportação.
+✅ Protótipo finalizado  
+🛠️ Implementação em andamento  
+🧪 Testes a serem realizados após integração da funcionalidade
+
+## 📷 Protótipo
+
+![Exportação de Relatórios](/Documentacao/assets/exportacao.png)
+
+## ✨ Próximos passos
+
+- Adicionar opção de exportação em CSV
+- Implementar preview do relatório diretamente na tela
+- Garantir responsividade em dispositivos móveis
+- Realizar testes de usabilidade com usuários finais
 
 ---
 
