@@ -9,7 +9,12 @@
 ---
 
 <h2 id="about">📌 Sobre</h2>
-Projeto desenvolvido para a disciplina Métodos de Desenvolvimento de Software - 2025/1.
+# 📚 Projeto
+
+Desenvolvido para a disciplina **Métodos de Desenvolvimento de Software - 2025/1**.
+
+
+---
 
 O **GovInsights** é uma plataforma de análise e visualização de dados financeiros públicos, focada inicialmente nos dados do **IPEA**.  
 O projeto busca democratizar o acesso às informações públicas através de relatórios inteligentes e dashboards interativos, utilizando **processamento de linguagem natural** e **visualizações dinâmicas** para facilitar a tomada de decisão e promover a transparência governamental.
