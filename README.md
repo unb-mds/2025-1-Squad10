@@ -9,7 +9,8 @@
 ---
 
 <h2 id="about">📌 Sobre</h2>
-# 📚 Projeto
+
+## 📚 Projeto
 
 Desenvolvido para a disciplina **Métodos de Desenvolvimento de Software - 2025/1**.
 
