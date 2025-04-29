@@ -7,7 +7,7 @@
 
 **Missão**: Democratizar o acesso à análise econômica a partir de dados e textos de fontes oficiais, promovendo transparência, eficiência e inteligência analítica através de ferramentas digitais acessíveis.
 
-**Problema que Resolve**: Dados econômicos e notícias de órgãos como o IPEA estão dispersos e pouco acessíveis para usuários não especialistas. A análise econômica ainda é altamente manual e demorada, restringindo o uso dos dados para tomada de decisão e participação cidadã.
+**Problemática**: Dados econômicos e notícias de órgãos como o IPEA estão dispersos e pouco acessíveis para usuários não especialistas. A análise econômica ainda é altamente manual e demorada, restringindo o uso dos dados para tomada de decisão e participação cidadã.
 
 **Solução Proposta**: Plataforma modular que coleta, analisa e apresenta de forma intuitiva séries temporais econômicas e notícias do IPEA com uso de modelos de NLP open-source e visualizações interativas. A solução permitirá:
 - Exploração de indicadores econômicos com filtros temporais e setoriais.
