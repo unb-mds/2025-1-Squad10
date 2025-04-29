@@ -1,11 +1,11 @@
-/* ======== ESTILO GERAL ======== */
+
 body, .stApp {
     background-color: #323232; /*cor do fundo*/
     font-family: 'Segoe UI', sans-serif;
     color: rgb(26, 26, 26); /*tetxo do tipulo*/
 }
 
-/* ======== SIDEBAR ======== */
+/*  SIDEBAR  */
 section[data-testid="stSidebar"] {
     background-color: #383737;
     padding: 1.5rem 1rem;
@@ -53,7 +53,7 @@ input[type="text"], .stTextInput input {
     border-radius: 8px;
 }
 
-/* ======== TÍTULO PRINCIPAL ======== */
+/*  TÍTULO PRINCIPAL  */
 h1, h2 {
     color: rgb(107, 107, 107);
     font-weight: bold;
@@ -66,7 +66,7 @@ h1.titulo {
     border-bottom: 1px solid #4a4a4a;
 }
 
-/* ======== MÉTRICAS (CARDS) ======== */
+/*  MÉTRICAS (CARDS)  */
 [data-testid="metric-container"] {
     background-color: #ffffff;
     padding: 1rem;
@@ -97,7 +97,7 @@ h1.titulo {
     color: #757575;
 }
 
-/* ======== PAINEL DE TEXTO ======== */
+/*  PAINEL DE TEXTO  */
 .painel {
     background-color: #292929;
     border: 1px solid #606060;
@@ -107,7 +107,7 @@ h1.titulo {
     font-size: 0.95rem;
 }
 
-/* ======== INDICADOR DE VELOCIDADE ======== */
+/*  INDICADOR DE VELOCIDADE  */
 .valor-indicador {
     font-size: 2.5rem;
     font-weight: bold;
@@ -116,7 +116,7 @@ h1.titulo {
     margin-top: 1rem;
 }
 
-/* ======== GRAFICO LINHAS ======== */
+/*  GRAFICO LINHAS  */
 .stPlotlyChart {
     background-color: #292929;
     padding: 1rem;
@@ -214,4 +214,6 @@ header {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     margin-bottom: 1rem;
 }
+
+
 

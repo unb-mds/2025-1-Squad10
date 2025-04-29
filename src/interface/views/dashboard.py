@@ -8,6 +8,8 @@ import requests
 
 st.set_page_config(page_title="Dashboard IPEA", layout="wide")
 
+
+
 # Funções para integrações futuras
 def get_total_receitas():
     # TODO: Substituir por integração 
