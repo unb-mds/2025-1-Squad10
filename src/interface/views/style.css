@@ -1,0 +1,217 @@
+/* ======== ESTILO GERAL ======== */
+body, .stApp {
+    background-color: #323232; /*cor do fundo*/
+    font-family: 'Segoe UI', sans-serif;
+    color: rgb(26, 26, 26); /*tetxo do tipulo*/
+}
+
+/* ======== SIDEBAR ======== */
+section[data-testid="stSidebar"] {
+    background-color: #383737;
+    padding: 1.5rem 1rem;
+    border-right: 1px solid #585858;
+}
+
+/* Título da sidebar */
+section[data-testid="stSidebar"] h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #BDBDBD; /* cor do texto do sidebar */
+    margin-bottom: 2rem;
+    margin-top: -40px;
+    text-align: center; 
+}
+
+
+
+/* Botões da sidebar */
+button[kind="secondary"], .stButton > button {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.3rem 0;
+    background-color: #1d1d1d; /*cor dos botões*/
+    border: none;
+    border-radius: 10px;
+    color: rgb(167, 167, 167); /*escrita dos bottões*/
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+
+/*hover botões*/
+button[kind="secondary"]:hover, .stButton > button:hover {
+    background-color: #727272;
+    color: #0e0d0d;
+}
+
+/* Caixa de busca */
+input[type="text"], .stTextInput input {
+    background-color: #727272;
+    border: none;
+    color: rgb(25, 24, 24);
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+/* ======== TÍTULO PRINCIPAL ======== */
+h1, h2 {
+    color: rgb(107, 107, 107);
+    font-weight: bold;
+}
+
+h1.titulo {
+    font-size: 2.2rem;
+    padding: 1.2rem 2rem 0.5rem;
+    background-color: transparent;
+    border-bottom: 1px solid #4a4a4a;
+}
+
+/* ======== MÉTRICAS (CARDS) ======== */
+[data-testid="metric-container"] {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid #505050;
+    margin-bottom: 1rem;
+}
+
+[data-testid="metric-container"] h1 {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+[data-testid="stMetricDelta"] {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+}
+
+[data-testid="stMetricDeltaPositive"] {
+    background-color: #5e5e5e;
+    color: #585858;
+}
+
+[data-testid="stMetricDeltaNegative"] {
+    background-color: #898989;
+    color: #757575;
+}
+
+/* ======== PAINEL DE TEXTO ======== */
+.painel {
+    background-color: #292929;
+    border: 1px solid #606060;
+    padding: 1.2rem;
+    border-radius: 12px;
+    color: rgb(255, 255, 255);
+    font-size: 0.95rem;
+}
+
+/* ======== INDICADOR DE VELOCIDADE ======== */
+.valor-indicador {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(92, 92, 92);
+    margin-top: 1rem;
+}
+
+/* ======== GRAFICO LINHAS ======== */
+.stPlotlyChart {
+    background-color: #292929;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid #757577;
+}
+
+/* Remove espaço extra entre elementos */
+.css-1kyxreq, .block-container {
+    padding: 1rem 2rem;
+}
+
+/* Remove padding/margem que causa a barra branca no topo */
+.css-18ni7ap.e8zbici2 {
+    padding-top: 0rem !important;
+}
+
+/* Remove header invisível que deixa espaço */
+header {
+    visibility: hidden;
+    height: 0px !important;
+    position: absolute;
+    top: 50px;
+}
+
+
+
+.card-metrica {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(126, 124, 124, 0.957);
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.card-topo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.icon {
+    font-size: 1.1rem;
+}
+
+.valor {
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.variacao {
+    margin-top: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.positivo {
+    background-color: rgba(0, 255, 150, 0.1);
+    color: #8c8e8d;
+}
+
+/* HEADER ESTILIZADO (como na segunda imagem) */
+.header-ipea {
+    background-color: #4e4e4e;
+    padding: 1.5rem;
+    margin: -1rem -1rem 2rem -1rem;
+    border-bottom: 1px solid #474646;
+}
+.titulo-ipea {
+    color: #003366;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+.subtitulo-ipea {
+    color: #666;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Restante do seu CSS existente */
+.card-metrica {
+    background: #212121;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+}
+
