@@ -1,25 +1,26 @@
-# Backlog do produto
+# Backlog do Produto
 
 | Prioridade | User Story                                                                                                          | Tipo de Requisito             |
 | ---------- | ------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
-| Alta       | Como desenvolvedor, quero importar arquivos via API, para alimentar o pipeline com dados do IPEA.                   | Funcional                     |
-| Alta       | Como desenvolvedor, quero que os dados sejam obtidos automaticamente (API ou scraping), para garantir atualizações. | Funcional                     |
-| Média      | Como desenvolvedor, quero aplicar um pipeline de pré-processamento textual, para alimentar os modelos de NLP.       | Funcional                     |
-| Alta       | Como desenvolvedor, quero aplicar o BERTopic nos textos, para identificar tópicos relevantes.                       | Funcional                     |
-| Média      | Como analista público, quero visualizar tópicos e exemplos de textos, para entender melhor as áreas críticas.       | Funcional                     |
-| Alta       | Como cientista de dados, quero normalizar datas, moedas e categorias, para garantir consistência na análise.        | Funcional                     |
-| Alta       | Como gestor público, quero receber um resumo técnico mensal, para entender rapidamente os principais pontos.        | Funcional                     |
-| Média      | Como desenvolvedor, quero utilizar modelos generativos (T5, BART) para gerar resumos a partir dos dados.            | Funcional                     |
-| Alta       | Como gestor, quero receber alertas automáticos sobre gastos anormais, para tomar decisões corretivas.               | Funcional                     |
-| Média      | Como desenvolvedor, quero configurar regras para alertas, para evitar falsos positivos.                             | Funcional                     |
-| Alta       | Como gestor público, quero visualizar dados e relatórios em uma interface clara, para facilitar a análise.          | Funcional                     |
-| Média      | Como usuário, quero interagir com filtros e gráficos, para explorar regiões, períodos e categorias.                 | Funcional                     |
-| Média      | Como analista, quero exportar relatórios em PDF ou HTML, para enviar ou arquivar.                                   | Funcional                     |
-| Média      | Como gestor, quero salvar relatórios anteriores, para acompanhar a evolução dos indicadores.                        | Funcional                     |
-| Alta       | Como desenvolvedor, quero criar endpoints REST com FastAPI, para a interface acessar dados dinamicamente.           | Funcional                     |
-| Alta       | Como desenvolvedor, quero escrever testes unitários e de integração, para garantir que o sistema funcione.          | Não funcional (qualidade)     |
-| Alta       | Como colaborador, quero ter uma documentação clara do pipeline, para facilitar o onboarding.                        | Não funcional (documentação)  |
-| Média      | Como gestor, quero disponibilizar o projeto como código aberto, para outras instituições públicas replicarem.       | Não funcional (licenciamento) |
+| 🚨 **Alta** | Como desenvolvedor, quero importar arquivos via API, para alimentar o pipeline com dados do IPEA.                   | Funcional                     |
+| 🚨 **Alta** | Como desenvolvedor, quero que os dados sejam obtidos automaticamente (API ou scraping), para garantir atualizações. | Funcional                     |
+| ⚠️ **Média** | Como desenvolvedor, quero aplicar um pipeline de pré-processamento textual, para alimentar os modelos de NLP.       | Funcional                     |
+| 🚨 **Alta** | Como desenvolvedor, quero aplicar o BERTopic nos textos, para identificar tópicos relevantes.                       | Funcional                     |
+| ⚠️ **Média** | Como analista público, quero visualizar tópicos e exemplos de textos, para entender melhor as áreas críticas.       | Funcional                     |
+| 🚨 **Alta** | Como cientista de dados, quero normalizar datas, moedas e categorias, para garantir consistência na análise.        | Funcional                     |
+| 🚨 **Alta** | Como gestor público, quero receber um resumo técnico mensal, para entender rapidamente os principais pontos.        | Funcional                     |
+| ⚠️ **Média** | Como desenvolvedor, quero utilizar modelos generativos (T5, BART) para gerar resumos a partir dos dados.            | Funcional                     |
+| 🚨 **Alta** | Como gestor, quero receber alertas automáticos sobre gastos anormais, para tomar decisões corretivas.               | Funcional                     |
+| ⚠️ **Média** | Como desenvolvedor, quero configurar regras para alertas, para evitar falsos positivos.                             | Funcional                     |
+| 🚨 **Alta** | Como gestor público, quero visualizar dados e relatórios em uma interface clara, para facilitar a análise.          | Funcional                     |
+| ⚠️ **Média** | Como usuário, quero interagir com filtros e gráficos, para explorar regiões, períodos e categorias.                 | Funcional                     |
+| ⚠️ **Média** | Como analista, quero exportar relatórios em PDF ou HTML, para enviar ou arquivar.                                   | Funcional                     |
+| ⚠️ **Média** | Como gestor, quero salvar relatórios anteriores, para acompanhar a evolução dos indicadores.                        | Funcional                     |
+| 🚨 **Alta** | Como desenvolvedor, quero criar endpoints REST com FastAPI, para a interface acessar dados dinamicamente.           | Funcional                     |
+| 🚨 **Alta** | Como desenvolvedor, quero escrever testes unitários e de integração, para garantir que o sistema funcione.          | Não funcional (qualidade)     |
+| 🚨 **Alta** | Como colaborador, quero ter uma documentação clara do pipeline, para facilitar o onboarding.                        | Não funcional (documentação)  |
+| ⚠️ **Média** | Como gestor, quero disponibilizar o projeto como código aberto, para outras instituições públicas replicarem.       | Não funcional (licenciamento) |
+
 
 ---
 
@@ -143,6 +144,8 @@
 </table>
 
 ---
+## 🗺️ Story Map
+![Story Map](https://github.com/unb-mds/2025-1-Squad10/blob/main/Documentacao/assets/StoryMap.png?raw=true)
 
 ## Diagrama Backlog (Chuva de Ideias)
 <a href="https://www.figma.com/team_invite/redeem/JtjJg0xfYUI6RE1FBSzOlM"><img src="../assets/backlog.png" width="100%;" alt="Backlog"/></a>

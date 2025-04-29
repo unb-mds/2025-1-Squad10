@@ -1,55 +1,82 @@
 # Visão do Produto
 
-## Nome do Projeto
+## GovInsights  
+**Sistema Inteligente para Análise Automatizada de Notícias e Indicadores Públicos**
 
-### Sistema Inteligente para Análise Automatizada de Notícias e Indicadores do IPEA
+---
 
 ## Missão
 
-Democratizar o acesso à análise econômica a partir de dados e textos de fontes oficiais, promovendo transparência, eficiência e inteligência analítica através de ferramentas digitais acessíveis.
+Democratizar o acesso à análise econômica e de dados públicos, transformando dados e textos de fontes oficiais em informações claras, acessíveis e acionáveis, utilizando ferramentas digitais modernas, identidades visuais consistentes e tecnologias de Inteligência Artificial.
+
+---
 
 ## Problema que Resolve
 
-Atualmente, dados econômicos e notícias de órgãos como o IPEA estão dispersos e pouco acessíveis para usuários não especialistas. A análise econômica ainda é altamente manual, demorada e restrita a usuários com formação técnica. Isso dificulta o uso dos dados para tomada de decisão, educação e participação cidadã.
+Atualmente, dados econômicos e notícias públicas, como as do IPEA, estão dispersos e pouco acessíveis para a maioria dos cidadãos. A análise ainda é manual, lenta e restrita a especialistas, dificultando a educação pública, a gestão informada e a participação cidadã.
+
+---
 
 ## Solução Proposta
 
-Plataforma modular que coleta, analisa e apresenta de forma intuitiva séries temporais econômicas e notícias do IPEA com uso de modelos de NLP open-source e visualizações interativas. Com isso, qualquer usuário pode:
+**GovInsights** é uma plataforma modular, baseada em **Streamlit**, que coleta, analisa e apresenta de maneira intuitiva:
 
-- Explorar indicadores econômicos com filtros temporais e setoriais  
-- Gerar relatórios automáticos com análises quantitativas e qualitativas  
-- Compreender temas, sentimentos e tendências em notícias  
+- Séries temporais econômicas e indicadores públicos;
+- Notícias recentes processadas com modelos de Processamento de Linguagem Natural (NLP);
+- Relatórios automáticos em formatos PDF e HTML, combinando análise quantitativa e qualitativa.
+
+Ela permitirá que qualquer usuário:
+
+- **Explore** dados com filtros temporais, regionais e setoriais;
+- **Visualize** tendências e sentimentos extraídos de notícias públicas;
+- **Gere** relatórios de forma automática e exportável;
+- **Navegue** com uma identidade visual moderna e acessível.
+
+---
 
 ## Diferenciais
 
-- Interface acessível com Streamlit e dashboards integrados com Metabase *(a definir)*  
-- Pipeline automatizado de coleta e análise via Django e Airflow *(a definir)*  
-- Uso de NLP leve (BERTopic, BERTimbau, DistilBERT, etc.) para insights de texto *(a definir)*  
-- Exportação automatizada de relatórios em PDF e HTML  
+- Interface amigável, desenvolvida com Streamlit + HTML/CSS customizado;
+- Identidade visual própria (marca, paleta de cores e design manual);
+- Pipeline automatizado para coleta, processamento e exibição dos dados;
+- Uso de modelos NLP open-source (como BERTopic, BERTimbau ou DistilBERT);
+- Integração direta com a API do IPEA para atualização contínua dos dados;
+- Geração de relatórios em múltiplos formatos (PDF e HTML).
+
+---
 
 ## Impacto Esperado
 
-- Redução no tempo de análise econômica para servidores e pesquisadores  
-- Estímulo à educação econômica com ferramentas intuitivas  
-- Melhoria na qualidade de decisão política e gestão pública baseada em dados  
-- Acesso cidadão facilitado a dados públicos com interpretações semânticas  
+- Redução no tempo e esforço de análise de dados públicos;
+- Facilitação do acesso cidadão a dados econômicos e sociais;
+- Apoio à transparência pública e gestão baseada em evidências;
+- Estímulo à educação econômica e política a partir de fontes abertas.
 
 ---
 
-## 🎯 1. Objetivo Geral
+## 🎯 Objetivo Geral
 
-Construir uma plataforma de geração automatizada de relatórios financeiros públicos com painéis interativos e textos gerados por modelos NLP open-source, promovendo transparência e eficiência na gestão pública.
+Construir uma plataforma interativa de análise e geração de relatórios de indicadores públicos, utilizando processamento inteligente de dados e visualizações acessíveis, promovendo a transparência e a eficiência na gestão pública e cidadã.
 
 ---
 
-## 👥 2. Participantes e Papéis
+## 👥 Participantes e Papéis
 
-| Papel                   | Responsável                                      | Atividades Principais                                            |
-|-------------------------|--------------------------------------------------|------------------------------------------------------------------|
-| Stakeholder Principal   | XXXXXXXXXXXX                                             | Validação de requisitos, definição de escopo e uso final         |
-| Product Owner           | XXXXXXXXXXXX                                     | Priorização de funcionalidades, gestão do backlog, alinhamento   |
-| Dev Team                | XXXXXXXXXXXX    | Desenvolvimento, testes, integração e deploy da solução          |
-| UX/UI Designer          | XXXXXXXXXXXX          | Prototipação de interfaces e testes de usabilidade               |
-| Engenheiro de Dados     | XXXXXXXXXXXX                                | Construção de pipelines de dados, ETL e manutenção da base       |
-| Cientista de Dados      | XXXXXXXXXXXX                                 | Modelagem NLP, análise estatística e extração de insights        |
-| Usuário Final           | XXXXXXXXXXXX                                | Consumo dos relatórios e análise de indicadores e alertas        |
+| Papel                   | Responsáveis                                      | Atividades Principais                                            |
+|--------------------------|---------------------------------------------------|------------------------------------------------------------------|
+| Stakeholders    | Eric, Brenda e Maria Eduarda                                      | Validação dos requisitos e avaliação dos resultados             |
+| Product Owner            | Brenda                                     | Priorização de funcionalidades, gestão do backlog                |
+| FrontEnd|   Eduarda e Mayra |  Desenvolvimento da identidade visual, telas (Login, Exportação, Landing Page), integração Streamlit + HTML/CSS |
+| BackEnd | Marjorie, Guilherme e Gabriel| Integração da API IPEA, coleta de dados, implementação dos métodos GET e POST |
+| Gestão de Projetos | Eric, Brenda e Maria Eduarda | Cronograma, controle de sprints, revisão de branches e suporte de gestão ágil |
+| Usuário Final             | Público geral e servidores públicos              | Consumo dos relatórios gerados e análise dos indicadores         |
+
+---
+
+## 📋 Controle de Revisão do Documento
+
+| Versão | Data da Modificação | Responsável          | Descrição da Alteração                   |
+|--------|---------------------|----------------------|------------------------------------------|
+| 1.0    | 13/04/2025           | Brenda       | Criação do Documento de Visão do Produto |
+| 1.1    | 27/04/2025           | Brenda       | Atualização com base nas decisões tomadas nas Sprints   |
+
