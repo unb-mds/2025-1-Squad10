@@ -33,7 +33,7 @@ O objetivo desse estudo foi entender como utilizar o Figma para estruturar inter
 - [Como exportar Figma para HTML](https://www.animaapp.com/blog/pt/design-para-codigo/como-exportar-figma-para-html/)
 
 ## **Identidade Visual e Manual da Marca** 
-- [Visualiza o projeto no Figma](https://www.figma.com/design/2bACKp7T8yOliKgDRDeeYm/BranchBook?fuid=964665507729106955) 
+- [Visualize o projeto no Figma](https://www.figma.com/design/2bACKp7T8yOliKgDRDeeYm/BranchBook?fuid=964665507729106955) 
 
 
 
