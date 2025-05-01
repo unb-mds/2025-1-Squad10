@@ -19,17 +19,19 @@ Essa arquitetura foi pensada para ser eficiente no curto prazo e flexível o suf
 
 ## A arquitetura do projeto é organizada da seguinte forma:
 
-![alt text](image.png)
-
 * interface/: Responsável pela camada de apresentação, organiza toda a interação visual com o usuário, contendo componentes e páginas da aplicação, como layouts, inputs, filtros e dashboards interativos.
 
 * interface/views/: Subdiretório da interface que organiza as telas principais da aplicação, como visão geral, relatórios financeiros e alertas, facilitando a separação de responsabilidades por contexto visual.
+
+* interface/views/styles: Estilização das interfaces.
 
 * controllers/: A camada de controle, que faz a ponte entre a interface e a lógica de negócio, orquestrando as interações entre as views e os serviços e recebendo inputs do usuário para retornar dados processados.
 
 * services/: Contém a lógica de negócio da aplicação, incluindo regras, transformações de dados e integrações com componentes externos, como o Haystack para tarefas de sumarização de textos financeiros, geração de relatórios inteligentes e busca semântica.
 
 * models/: Define as entidades principais do sistema (como Relatório, IndicadorFinanceiro, Tendência), padronizando os dados e facilitando a validação e o mapeamento entre as diferentes camadas.
+
+* models/search: Camada de acesso as implementações das funções de pesquisa por parte do back-end que serão utilizadas por chamadas via front-end.
 
 * data/: Camada de acesso a dados, encarregada de gerenciar o armazenamento persistente, como bancos de dados e indexadores do Haystack (Elasticsearch ou FAISS), além de realizar operações de inserção, busca e atualização de dados.
 
