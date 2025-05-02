@@ -13,7 +13,7 @@
 | 🚨 **Alta** | Como gestor, quero receber alertas automáticos sobre gastos anormais, para tomar decisões corretivas.               | Funcional                     |
 | ⚠️ **Média** | Como desenvolvedor, quero configurar regras para alertas, para evitar falsos positivos.                             | Funcional                     |
 | 🚨 **Alta** | Como gestor público, quero visualizar dados e relatórios em uma interface clara, para facilitar a análise.          | Funcional                     |
-| ⚠️ **Média** | Como usuário, quero interagir com filtros e gráficos, para explorar regiões, períodos e categorias.                 | Funcional                     |
+| ⚠️ **Média** | Como usuário, quero interagir com filtros e gráficos, para explorar períodos e categorias.                 | Funcional                     |
 | ⚠️ **Média** | Como analista, quero exportar relatórios em PDF ou HTML, para enviar ou arquivar.                                   | Funcional                     |
 | ⚠️ **Média** | Como gestor, quero salvar relatórios anteriores, para acompanhar a evolução dos indicadores.                        | Funcional                     |
 | 🚨 **Alta** | Como desenvolvedor, quero criar endpoints REST com FastAPI, para a interface acessar dados dinamicamente.           | Funcional                     |
@@ -90,7 +90,7 @@
       <td style="border: 1px solid black;">Proporciona uma interface clara e intuitiva para a visualização de dados financeiros.</td>
     </tr>
     <tr>
-      <td style="border: 1px solid black;">Como usuário, quero interagir com filtros e gráficos no dashboard, para explorar diferentes regiões, períodos e categorias.</td>
+      <td style="border: 1px solid black;">Como usuário, quero interagir com filtros e gráficos no dashboard, para explorar diferentes períodos e categorias.</td>
       <td style="border: 1px solid black;">Permite a interação com gráficos e filtros para uma análise detalhada dos dados financeiros.</td>
     </tr>
     <tr>

@@ -50,7 +50,7 @@
 | RF009 | Alta | Como gestor, quero receber alertas automáticos sobre gastos anormais, para tomar decisões corretivas. | Envia alertas sobre variações anormais em gastos, ajudando na tomada de decisões. |
 | RF010 | Média | Como desenvolvedor, quero configurar regras para alertas, para evitar falsos positivos. | Permite configurar regras de alerta para evitar notificações desnecessárias. |
 | RF011 | Alta | Como gestor público, quero visualizar dados e relatórios em uma interface clara, para facilitar a análise. | Proporciona uma interface intuitiva para visualização e interpretação dos dados financeiros. |
-| RF012 | Média | Como usuário, quero interagir com filtros e gráficos, para explorar regiões, períodos e categorias. | Permite a interação com gráficos e filtros, facilitando a análise personalizada dos dados. |
+| RF012 | Média | Como usuário, quero interagir com filtros e gráficos, para explorar períodos e categorias. | Permite a interação com gráficos e filtros, facilitando a análise personalizada dos dados. |
 | RF013 | Média | Como analista, quero exportar relatórios em PDF ou HTML, para enviar ou arquivar. | Facilita a exportação de relatórios para formatos compatíveis com outras plataformas. |
 | RF014 | Média | Como gestor, quero salvar relatórios anteriores, para acompanhar a evolução dos indicadores. | Permite salvar relatórios passados para acompanhar a evolução de indicadores financeiros. |
 | RF015 | Alta | Como desenvolvedor, quero criar endpoints REST com FastAPI, para a interface acessar dados dinamicamente. | Cria endpoints para que a interface acesse dados financeiros em tempo real. |
