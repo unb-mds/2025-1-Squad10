@@ -3,7 +3,7 @@ import pandas as pd
 
 def organization(phrase: str):
     """
-    Retorna um dataframe contendo as series do IPEA de acordo com a string parametrizada referente a um órgão procurado.
+    Retorna um dataframe contendo as series com dados financeiros do IPEA de acordo com a string parametrizada referente ao órgão procurado.
 
     Caso a busca não seja bem sucedida sera retornado uma string "Não Encotrado".
     """
