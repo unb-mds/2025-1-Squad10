@@ -38,11 +38,7 @@ def code(phrase: str):
     Caso a busca não seja bem sucedida sera retornado uma string "Não Encotrado".
     """
     code = ipea.metadata()
-    print(code)
     code = code[code["MEASURE"].str.contains("\\$")]
-    print(code)
     code = code[code["CODE"].str.contains(phrase.upper())]
-    print(code)
     code = code.sort_values(by='CODE')
-    print(code)
     return "Não Encontrado" if code.empty else code
