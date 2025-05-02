@@ -21,17 +21,13 @@ def theme(phrase: str):
     Caso a busca não seja bem sucedida sera retornado uma string "Não Encotrado".
     """
     getThemeID = ipea.themes()
-    getThemeID['NAME'] = getThemeID['NAME'].str.lower()
-    getThemeID = getThemeID[getThemeID['NAME'].str.contains(phrase.lower())]
-    try:
-        found = pd.DataFrame()
+    getThemeID = getThemeID[getThemeID['NAME'].str.lower().str.contains(phrase.lower())]
+    found = pd.DataFrame()
+    if not getThemeID.empty:
         for id in getThemeID['ID']:
             find = ipea.metadata(theme_id=id)
             find = find[find['MEASURE'].str.contains("\\$")]
             found = pd.concat([found, find], ignore_index=True)
         found = found.sort_values(by='CODE')
-    except:
-        return "Não Encontrado"
-    else:
-        return "Não Encontrado" if found.empty else found
+    return "Não Encontrado" if found.empty else found
     
