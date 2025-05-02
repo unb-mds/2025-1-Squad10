@@ -27,7 +27,7 @@ def theme(phrase: str):
         for id in getThemeID['ID']:
             find = ipea.metadata(theme_id=id)
             find = find[find['MEASURE'].str.contains("\\$")]
-            found = pd.concat([found, find], ignore_index=True)
+            found = pd.concat([found, find])
         found = found.sort_values(by='CODE')
     return "Não Encontrado" if found.empty else found
     
