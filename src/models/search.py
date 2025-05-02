@@ -31,3 +31,14 @@ def theme(phrase: str):
         found = found.sort_values(by='CODE')
     return "Não Encontrado" if found.empty else found
     
+def code(phrase: str):
+    """
+    Retorna um dataframe contendo as series com dados financeiros do IPEA de acordo com a string parametrizada referente ao código procurado.
+
+    Caso a busca não seja bem sucedida sera retornado uma string "Não Encotrado".
+    """
+    code = ipea.metadata()
+    code = code[code["MEASURE"].str.contains("\\$")]
+    code = code[code["CODE"].str.contains(phrase.upper())]
+    code = code.sort_values(by='CODE')
+    return "Não Encontrado" if code.empty else code
