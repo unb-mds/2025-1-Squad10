@@ -1,38 +1,40 @@
 
 body, .stApp {
-    background-color: #323232; /*cor do fundo*/
+    background-color: #0F1020; /*cor do fundo*/
     font-family: 'Segoe UI', sans-serif;
-    color: rgb(26, 26, 26); /*tetxo do tipulo*/
+    color: #ffffff; /*tetxo do tipulo*/
+    opacity: 0.9; 
 }
 
 /*  SIDEBAR  */
 section[data-testid="stSidebar"] {
-    background-color: #383737;
+    background-color: #0C3248;
     padding: 1.5rem 1rem;
-    border-right: 1px solid #585858;
+    border-right: 1px solid #0C3248;
+    opacity: 0.5; 
 }
 
 /* Título da sidebar */
 section[data-testid="stSidebar"] h1 {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #BDBDBD; /* cor do texto do sidebar */
+    color: #ffffff; /* cor do texto do sidebar */
     margin-bottom: 2rem;
     margin-top: -40px;
     text-align: center; 
 }
 
-
+/*cores padrões*/
 
 /* Botões da sidebar */
 button[kind="secondary"], .stButton > button {
     width: 100%;
     padding: 0.8rem;
     margin: 0.3rem 0;
-    background-color: #1d1d1d; /*cor dos botões*/
+    background-color: #0F1020; /*cor dos botões*/
     border: none;
     border-radius: 10px;
-    color: rgb(167, 167, 167); /*escrita dos bottões*/
+    color: #ffffff; /*escrita dos bottões*/
     font-weight: 500;
     transition: 0.3s;
 }
@@ -40,22 +42,27 @@ button[kind="secondary"], .stButton > button {
 
 /*hover botões*/
 button[kind="secondary"]:hover, .stButton > button:hover {
-    background-color: #727272;
-    color: #0e0d0d;
+    background-color: #2BB17A;
+    color: #0F1020;
 }
+
+
+/*cores padrões*/
+
+
 
 /* Caixa de busca */
 input[type="text"], .stTextInput input {
-    background-color: #727272;
+    background-color: #0F1020;
     border: none;
-    color: rgb(25, 24, 24);
+    color: #0F1020;
     padding: 0.5rem;
     border-radius: 8px;
 }
 
 /*  TÍTULO PRINCIPAL  */
 h1, h2 {
-    color: rgb(107, 107, 107);
+    color: #ffffff;
     font-weight: bold;
 }
 
@@ -63,7 +70,7 @@ h1.titulo {
     font-size: 2.2rem;
     padding: 1.2rem 2rem 0.5rem;
     background-color: transparent;
-    border-bottom: 1px solid #4a4a4a;
+    border-bottom: 1px solid #ffffff;
 }
 
 /*  MÉTRICAS (CARDS)  */
@@ -71,7 +78,7 @@ h1.titulo {
     background-color: #ffffff;
     padding: 1rem;
     border-radius: 12px;
-    border: 1px solid #505050;
+    border: 1px solid #0F1020;
     margin-bottom: 1rem;
 }
 
@@ -88,70 +95,74 @@ h1.titulo {
 }
 
 [data-testid="stMetricDeltaPositive"] {
-    background-color: #5e5e5e;
-    color: #585858;
+    background-color: #0F1020;
+    color: #0F1020;
 }
 
 [data-testid="stMetricDeltaNegative"] {
-    background-color: #898989;
-    color: #757575;
-}
+    background-color: #ffffff;
+    color: #ffffff;
+}/*cores padrões*/
 
 /*  PAINEL DE TEXTO  */
 .painel {
-    background-color: #292929;
-    border: 1px solid #606060;
+    background-color: #0F1020;
+    border: 1px solid #ffffff;
     padding: 1.2rem;
     border-radius: 12px;
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     font-size: 0.95rem;
-}
+}/*cores padrões*/
+
+
 
 /*  INDICADOR DE VELOCIDADE  */
 .valor-indicador {
     font-size: 2.5rem;
     font-weight: bold;
     text-align: center;
-    color: rgb(92, 92, 92);
+    color: #ffffff;
     margin-top: 1rem;
-}
+}/*cores padroes */ 
 
 /*  GRAFICO LINHAS  */
 .stPlotlyChart {
-    background-color: #292929;
+    background-color: #0F1020;
     padding: 1rem;
     border-radius: 12px;
-    border: 1px solid #757577;
-}
+    border: 1px solid #ffffff;
+} /*cores padroes */
 
 /* Remove espaço extra entre elementos */
 .css-1kyxreq, .block-container {
     padding: 1rem 2rem;
 }
 
-/* Remove padding/margem que causa a barra branca no topo */
+/* Remove padding/margem que causa a barra branca no topo 
 .css-18ni7ap.e8zbici2 {
     padding-top: 0rem !important;
 }
+*/
 
-/* Remove header invisível que deixa espaço */
+
+ /*Remove header invisível que deixa espaço */
 header {
     visibility: hidden;
     height: 0px !important;
     position: absolute;
     top: 50px;
-}
+} 
 
 
 
 .card-metrica {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(126, 124, 124, 0.957);
+    background: #0F1020;
+    border: 1px solid rgba(255, 255, 255, 0.957);
     border-radius: 12px;
     padding: 15px 20px;
     margin-bottom: 10px;
-    color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
     transition: all 0.3s ease;
 }
 
@@ -183,37 +194,94 @@ header {
 }
 
 .positivo {
-    background-color: rgba(0, 255, 150, 0.1);
-    color: #8c8e8d;
+    background-color:#2BB17A;
+    color: #ffffff;
 }
 
 /* HEADER ESTILIZADO (como na segunda imagem) */
 .header-ipea {
-    background-color: #4e4e4e;
+    background-color: #0C3248;
     padding: 1.5rem;
     margin: -1rem -1rem 2rem -1rem;
-    border-bottom: 1px solid #474646;
+    border-bottom: 1px solid #0C3248;
+    border-radius: 10px 10px 0 0;
+    opacity: 0.5; 
+    
+    
 }
+
+
+/*
+.header-ipea {
+    background-color: #0C3248;
+    padding: 1rem 2.5rem;
+    border-radius: 10px 10px 0 0;
+    margin: -1rem -1rem 2rem -1rem;
+    border-bottom: 1px solid #0C3248;
+    margin-left: -2.5rem;
+    margin-right: -2.5rem;
+}
+*/
 .titulo-ipea {
-    color: #003366;
+    color: #0C3248;
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 0;
 }
 .subtitulo-ipea {
-    color: #666;
+    color: #0C3248;
     font-size: 1rem;
     margin-top: 0.5rem;
 }
 
 /* Restante do seu CSS existente */
 .card-metrica {
-    background: #212121;
+    background: #0F1020;
     border-radius: 10px;
     padding: 1rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: #0C3248;
     margin-bottom: 1rem;
 }
 
 
 
+            h2 {
+                color: white;
+                margin-bottom: 1rem;
+            }
+
+            label, .stSelectbox label, .stCheckbox label {
+                color: white !important;
+                font-weight: 500;
+            }
+
+            select, .stSelectbox div[data-baseweb="select"] {
+                background-color: #1e1e2f;
+                color: white;
+                border: 1px solid #ccc;
+                padding: 6px;
+                border-radius: 6px;
+                font-size: 14px;
+            }
+
+            .exportar {
+                background-color: #2BB17A;
+                color: #0F1020;
+                font-weight: bold;
+                border: none;
+                border-radius: 10px;
+                padding: 0.6rem 1.2rem;
+                margin-top: 1rem;
+                transition: background-color 0.3s;
+                cursor: pointer;
+            }
+
+            .exportar:hover {
+                background-color: #239765;
+                color: white;
+            }
+
+            .stCheckbox {
+                margin-top: 0.3rem;
+                margin-bottom: 0.3rem;
+            }
