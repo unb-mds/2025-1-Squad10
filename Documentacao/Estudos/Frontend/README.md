@@ -30,8 +30,10 @@ O objetivo desse estudo foi entender como utilizar o Figma para estruturar inter
 
 - [Como usar o Figma?](https://youtu.be/0WgnkzkC-Ew?feature=shared)  
 - [COMPONENTES e VARIANTES no FIGMA](https://youtu.be/srfZT7l9uEk?feature=shared)  
-- [Como exportar Figma para HTML](https://www.animaapp.com/blog/pt/design-para-codigo/como-exportar-figma-para-html/)  
+- [Como exportar Figma para HTML](https://www.animaapp.com/blog/pt/design-para-codigo/como-exportar-figma-para-html/)
 
+## **Identidade Visual e Manual da Marca** 
+- [Visualize o projeto no Figma](https://www.figma.com/design/2bACKp7T8yOliKgDRDeeYm/BranchBook?fuid=964665507729106955) 
 
 
 
