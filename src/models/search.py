@@ -44,9 +44,21 @@ def code(phrase: str):
     return "Não Encontrado" if code.empty else code
 
 def date(data_inicio:str = None,data_final:str = None):
-    """
-    Explicar a função. Dizer o tipo de dado que são os parametros
-    Forma de data: YYYY-MM-DD
+     """
+    Retorna os metadados das séries temporais do IPEA filtrados por intervalo de datas.
+
+    Parâmetros:
+    - data_inicio (str, opcional): Data inicial no formato 'YYYY-MM-DD'. Se fornecida, filtra as séries a partir desta data.
+    - data_final (str, opcional): Data final no formato 'YYYY-MM-DD'. Se fornecida, filtra as séries até esta data.
+
+    Regras de filtragem:
+    - Ambos os parâmetros ausentes: Lança ValueError, pois pelo menos uma das datas deve ser especificada.
+    - Apenas data_inicio presente: Retorna séries atualizadas a partir de data_inicio.
+    - Apenas data_final presente: Retorna séries atualizadas até data_final.
+    - Ambos os parâmetros presentes: Retorna séries atualizadas entre data_inicio e data_final, inclusive.
+
+    Retorna:
+    - pd.DataFrame: DataFrame contendo os metadados das séries filtrados pelo intervalo de datas.
     """
 
     if data_inicio is None and data_final is None:
