@@ -1,0 +1,6 @@
+site_name: Documentação - GovInsights
+docs_dir: ./Documentacao
+theme: material
+extra_css:
+  - stylesheets/extra.css
+repo_url: https://github.com/unb-mds/2025-1-Squad10/

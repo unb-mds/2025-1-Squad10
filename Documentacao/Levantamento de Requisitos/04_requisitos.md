@@ -1,5 +1,5 @@
 
-# Requisitos de Software: Sistema Inteligente para Análise Automatizada de Notícias e Indicadores do IPEA
+#  Requisitos de Software: Sistema Inteligente para Análise Automatizada de Notícias e Indicadores do IPEA
 
 ## 1. Visão Geral
 

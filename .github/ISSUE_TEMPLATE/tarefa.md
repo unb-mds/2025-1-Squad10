@@ -1,3 +1,12 @@
+---
+name: 📝 Tarefa
+about: Crie o relatório de uma tarefa.
+title: ''
+labels: ''
+assignees: ''
+
+---
+
 # Título da Tarefa
 
 📌 **Prioridade:** 🔴 Alta | 🟡 Média | 🟢 Baixa  
