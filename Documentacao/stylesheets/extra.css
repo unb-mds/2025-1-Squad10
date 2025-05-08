@@ -1,0 +1,4 @@
+/*impede que o css do mkdocs-material substitua a altura de imagens/videos especificada em nossa documentação*/
+.md-typeset img, .md-typeset svg, .md-typeset video{
+    height: revert-layer;
+}
