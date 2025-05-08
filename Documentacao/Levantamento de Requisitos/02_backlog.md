@@ -21,7 +21,15 @@
 | 🚨 **Alta** | Como colaborador, quero ter uma documentação clara do pipeline, para facilitar o onboarding.                        | Não funcional (documentação)  |
 | ⚠️ **Média** | Como gestor, quero disponibilizar o projeto como código aberto, para outras instituições públicas replicarem.       | Não funcional (licenciamento) |
 
-
+---
+## **Tecnologias Principais**:
+- **API do IPEA**: Integração para acessar dados financeiros atualizados.
+- **Python 3.x**: Ambiente de desenvolvimento.
+- **Streamlit**: Interface do usuário interativa.
+- **LLM Mistral-7B**: Utilizado para geração de relatórios automáticos.
+- **Pandas**: Manipulação de dados financeiros.
+- **Plotly**: Visualização gráfica interativa.
+- **Requests**: Requisições para consumir dados da API.
 ---
 
 # 🗺️ Story Map - Projeto Relatórios do IPEA
@@ -142,8 +150,15 @@
     </tr>
   </tbody>
 </table>
-
 ---
+
+## **Funcionalidades Prioritárias**:
+- Integração da API do IPEA.
+- Visualização de dados financeiros em gráficos dinâmicos.
+- Geração de relatórios automáticos utilizando **Mistral-7B**.
+- Sistema de alertas financeiros.
+---
+
 ## 🗺️ Story Map
 ![Story Map](https://github.com/unb-mds/2025-1-Squad10/blob/main/Documentacao/assets/StoryMap.png?raw=true)
 

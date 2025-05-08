@@ -1,14 +1,8 @@
 <h1 align="center" style="font-weight: bold;">📊 GovInsights - Análise de Dados Públicos  </h1>
 
 <p align="center">
- <a href="#about">Sobre</a> • 
- <a href="#started">Primeiros Passos</a> • 
- <a href="#colab">Colaboradores</a> •
+ <a href="https://unb-mds.github.io/2025-1-Squad10/">Git Pages</a>
 </p>
-
----
-
-<h2 id="about">📌 Sobre</h2>
 
 ## 📚 Projeto
 
@@ -29,37 +23,32 @@ O projeto busca democratizar o acesso às informações públicas através de re
 - Aplicar análise de sentimentos e identificação de tópicos em notícias relacionadas.
 - Estimular a transparência, a cidadania ativa e o uso de dados públicos.
 - Promover boas práticas de desenvolvimento ágil e colaborativo utilizando GitHub e metodologias ágeis.
-
 ---
-
+  
 <h2 id="tech">⚙️ Tecnologias Utilizadas</h2>
 
-- **Frontend:** Streamlit + customização com HTML/CSS
-- **Backend:** Django + Airflow (planejado)
-- **Processamento de Texto:** NLP (BERTopic, BERTimbau, DistilBERT)
-- **Banco de Dados:** (em definição)
-- **Visualização de Dados:** Metabase (em definição)
-- **Hospedagem:** GitHub Pages (documentação)
-- **Gerenciamento de Projeto:** GitHub Issues e Milestones
-
+- **Backend**: **Python 3.x**, **FastAPI**
+- **Frontend**: **Streamlit**
+- **Modelo de NLP**: **Mistral-7B**
+- **Bibliotecas**: **pandas 2.2.3**, **plotly 6.0.1**, **requests 2.32.3**
+- **Deploy**: **Streamlit Deploy**, **Git Pages**
 ---
 
-<h2 id="colab">👥 Collaborators</h2>
+## Collaborators
 
 O projeto é desenvolvido pelos seguintes integrantes:
 
-- Eric Gomes de Araujo – Desenvolvedor / Planejamento
-- Mayra Lithuania – Frontend / Design
-- Brenda Beatriz – Gestão de Projetos / Documentação
-- Guilherme Flyan – Backend
-- Eduarda Rodrigues – Frontend / Identidade Visual
-- Maria Eduarda – Gestão de Projetos
-- Gabriel Maciel – Backend
-- Marjorie Mitzi – Backend / Análise de Dados
+| Papel                   | Responsáveis                                      | Atividades Principais                                            |
+|--------------------------|---------------------------------------------------|------------------------------------------------------------------|
+| Stakeholders    | Eric, Brenda e Maria Eduarda                                      | Validação dos requisitos e avaliação dos resultados             |
+| Product Owner            | Brenda                                     | Priorização de funcionalidades, gestão do backlog                |
+| FrontEnd|   Eduarda e Mayra |  Desenvolvimento da identidade visual, telas (Login, Exportação, Landing Page), integração Streamlit + HTML/CSS |
+| BackEnd | Marjorie, Guilherme e Gabriel| Integração da API IPEA, coleta de dados, implementação dos métodos GET e POST |
+| Gestão de Projetos | Eric, Brenda e Maria Eduarda | Cronograma, controle de sprints, revisão de branches e suporte de gestão ágil |
+| Usuário Final             | Público geral e servidores públicos              | Consumo dos relatórios gerados e análise dos indicadores         |
 
 ---
 
-## 🧩 Colaboradores
 
 <table>
   <tr>
@@ -139,7 +128,64 @@ git checkout -b feature/nome-da-sua-feature
 - Siga o padrão de commits.
 - Atualize a documentação sempre que necessário.
 - Seja colaborativo e respeitoso.
+---
 
+# Como começar
+
+## Instalando Python 3
+### No Windows
+
+- Baixe e instale o [Python 3]([Download Python | Python.org](https://www.python.org/getit/)).
+### No Linux
+
+- No Linux, é necessário instalar os pacotes de desenvolvimento do Python. Utilize o seguinte comando:
+```
+sudo apt install python3-dev python3-pip python3-venv
+```
+## Clonando repositório
+
+- Clone o repositório utilizando o comando:
+
+```
+git clone https://github.com/unb-mds/2025-1-Squad10.git
+```
+
+## Criando e ativando um ambiente virtual do Python
+
+- Vá a pasta do repositório
+
+```
+cd 2025-1-Squad10
+```
+
+-  Crie um ambiente virtual do Python
+
+```
+python -m venv venv
+```
+
+-  Ative o ambiente virtual
+
+```
+# No Windows
+venv\Scripts\activate.bat
+# No Linux
+source ./venv/bin/activate
+```
+## Instalando pré-requisitos
+
+- Atualize a versão do pip
+```
+# No Windows
+python -m pip install -U pip
+# No Linux
+python3 -m pip install --upgrade pip
+```
+
+- Instale as dependências do projeto com o comando:
+```
+ pip install -r requirements.txt 
+```
 ---
 
 <h2 id="data">📈 Dados Utilizados</h2>
@@ -151,7 +197,7 @@ Os dados utilizados no projeto **GovInsights** serão extraídos de fontes públ
 <h2 id="access">🌐 Acesso ao Projeto</h2>
 
 - A documentação será hospedada no GitHub Pages. (Em construção)
-- O site de visualização será hospedado futuramente na Railway ou ambiente similar.
+- O site de visualização será hospedado futuramente na ferramenta de deploy do Streamlit.
 
 ---
 
@@ -159,7 +205,7 @@ Os dados utilizados no projeto **GovInsights** serão extraídos de fontes públ
 
 - 🎨 Protótipos no [Figma](https://www.figma.com/team_invite/redeem/JtjJg0xfYUI6RE1FBSzOlM)
 - 🧠 Planejamento no [Notion](https://www.notion.so/invite/6e431a0cfdbcdfadde473e1e02023c52e89070ee)
-- 📋 Backlog de Desenvolvimento (GitHub Projects)
+- 📋 Backlog de Desenvolvimento [GitHub Projects](https://github.com/unb-mds/2025-1-Squad10/projects?query=is%3Aopen)
 - 🏧 Arquitetura Técnica (em documentação)
 
 ---
@@ -177,5 +223,6 @@ Entre em contato pelo e-mail: 📩 **govinsights.project@gmail.com**
 |:------:|:----:|:---------|:-----:|:-------:|
 | 0.1.0  | 20/04/2025 | Estrutura inicial do README | Eric Gomes | Eric Gomes |
 | 0.1.1  | 27/04/2025 | Adição de seções e padronização |Brenda | Brenda|
+| 0.1.2  | 08/05/2025 | Adição de "Como contribuir" |Eric | Maria Eduarda |
 
 ---
