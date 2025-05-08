@@ -1,0 +1,5 @@
+site_name: Documentação - GovInsights
+docs_dir: ./Documentacao
+theme: material
+extra_css:
+  - stylesheets/extra.css
