@@ -27,7 +27,7 @@ O projeto busca democratizar o acesso às informações públicas através de re
   
 <h2 id="tech">⚙️ Tecnologias Utilizadas</h2>
 
-- **Backend**: **Python 3.x**, **FastAPI**
+- **Backend**: **Python 3.x**
 - **Frontend**: **Streamlit**
 - **Modelo de NLP**: **Mistral-7B**
 - **Bibliotecas**: **pandas 2.2.3**, **plotly 6.0.1**, **requests 2.32.3**

@@ -1,6 +1,9 @@
 site_name: Documentação - GovInsights
 docs_dir: ./Documentacao
-theme: material
+theme: 
+  name: material
+  logo: assets/LOGO.svg
 extra_css:
   - stylesheets/extra.css
 repo_url: https://github.com/unb-mds/2025-1-Squad10/
+repo_name: 'GovInsights'
