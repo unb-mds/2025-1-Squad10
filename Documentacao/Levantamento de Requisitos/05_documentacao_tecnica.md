@@ -1,41 +1,31 @@
 
 # 🛠️ Documentação Técnica  
-**Projeto: Relatórios Automatizados do IPEA**
-
+**Projeto: Relatórios do IPEA**
+ 
 Este documento detalha a arquitetura técnica, ferramentas utilizadas, organização do código e práticas recomendadas para desenvolvimento, manutenção e contribuição no projeto.
 
 ---
 
-## 🔧 Arquitetura Técnica
+## **Arquitetura**:
+A arquitetura monolítica foi escolhida para facilitar a integração entre o backend e o frontend. A solução utiliza **Python** no backend para servir os dados financeiros, com **Streamlit** como interface interativa. A comunicação com a **API do IPEA** é feita via **requests**, e os dados financeiros são manipulados usando **pandas**.
 
-### 📌 Componentes Principais:
+### **Fluxo de Dados**:
+1. O sistema consome dados da **API do IPEA**.
+2. O backend processa os dados utilizando **pandas**.
+3. O frontend, construído com **Streamlit**, exibe os dados em **gráficos interativos** utilizando **Plotly**.
+4. O modelo **Mistral-7B** é utilizado para gerar relatórios automáticos a partir dos dados financeiros processados.
 
-| Componente     | Descrição |
-|----------------|-----------|
-| **Frontend**   | Aplicação interativa em Streamlit com filtros, gráficos e exportação de relatórios. |
-| **Backend/API**| Implementado com FastAPI para servir dados e textos dinamicamente via endpoints REST. |
-| **NLP/IA**     | Modelos como T5, BART e BERTopic, utilizados para sumarização, extração de tópicos e geração de alertas. |
-| **Automação**  | Orquestração com Prefect ou Airflow para executar rotinas de ingestão, análise e geração. |
-| **Visualização**| Gráficos interativos com Plotly, exportáveis em HTML e PDF. |
+## **Deploy**:
+- **Streamlit Deploy** será usado para hospedar a aplicação web.
+- **Git Pages** será utilizado para hospedar a documentação do projeto.
 
----
-
-## 🧱 Organização do Projeto
-
-
----
-
-## 🧠 Modelos de NLP Utilizados
-
-- **BERTopic**: Extração de tópicos com visualização.
-- **T5 / BART**: Sumarização automática e explicações de textos.
-- **spaCy**: Pré-processamento linguístico (tokenização, lematização).
-- **Hugging Face Transformers**: Framework para deploy dos modelos.
-
----
+## **Tecnologias**:
+- **Python 3.x**, **Streamlit**
+- **Mistral-7B** para geração de relatórios automáticos
+- **pandas**, **plotly**, **requests**
 
 ## 🧪 Testes e Validação
-
+---
 
 ## 💬 Boas Práticas
 

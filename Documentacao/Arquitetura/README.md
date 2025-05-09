@@ -1,42 +1,124 @@
-# ***Arquitetura do Projeto***
+# 📊 GovInsights - Projeto de Geração Automática de Relatórios de Series Financeiras do IPEA
 
-Optamos por um modelo arquitetural monolítico modular para o projeto de geração de relatórios financeiros automáticos porque ele oferece um ótimo equilíbrio entre simplicidade e escalabilidade. Essa abordagem permite que toda a aplicação seja desenvolvida e mantida dentro de um único repositório, facilitando o controle e a colaboração entre as equipes de desenvolvimento. Ao mesmo tempo, ela oferece uma estrutura modular que organiza o código de maneira eficiente, preparando o sistema para evoluir de forma organizada à medida que os requisitos se expandem.
+Este projeto tem como objetivo gerar relatórios financeiros automatizados sobre series financeiras do **IPEA** (**Instituto de Pesquisa Econômica Aplicada**) com base em dados de entrada fornecidos pelo usuário. A aplicação foi construída com foco em modularidade, escalabilidade e facilidade de manutenção, utilizando um modelo monolítico modular com aplicação de padrões arquiteturais de arquitetura em camadas e MVC.
 
-A aplicação de padrões arquiteturais clássicos foi fundamental para garantir que cada parte do sistema tivesse uma responsabilidade clara, tornando o desenvolvimento e a manutenção mais ágeis:
+---
 
-* A Arquitetura em Camadas organiza o sistema de maneira que cada camada (apresentação, controle, lógica de negócio e acesso a dados) tenha um papel específico, o que facilita a manutenção e os testes sem que mudanças em uma camada impactem outras.
+## 🧱 Arquitetura do Projeto
 
-* Com o MVC (Model-View-Controller), conseguimos separar a lógica da interface, o que torna a aplicação mais flexível e fácil de atualizar sem quebrar as funcionalidades já existentes.
+Optamos por um modelo **monolítico modular**, baseado nos princípios de:
+- **Arquitetura em Camadas**
+- **Padrão MVC (Model-View-Controller)**
 
-* O Repository Pattern foi implementado para garantir que o acesso a dados fosse isolado, o que torna mais simples trocar a tecnologia de banco de dados ou persistência sem afetar o resto do sistema.
+Essa estrutura organiza o sistema em módulos claros e independentes, permitindo que cada parte seja evoluída de forma coesa e sustentável, com baixo acoplamento e alta coesão.
 
-* O uso do Worker Pattern, com a integração de Celery, permite que tarefas mais pesadas, como a análise de NLP e a geração de relatórios, sejam feitas de forma assíncrona, melhorando o desempenho e evitando que a aplicação trave enquanto essas tarefas são executadas.
+* ### Banco de Dados
+    - **Login de Usuários:** A autenticação é realizada através do **Google Identity**, garantindo uma forma segura e prática para os usuários se autenticarem.
+    - **Histórico de Relatórios:** O histórico dos relatórios gerados será armazenado no banco de dados local **SQLite**, proporcionando uma solução leve e eficiente para o armazenamento dos dados.
+  
+* ### Frontend e Backend
+    -  **Frontend:** A interface do usuário é construída utilizando **Streamlit**, garantindo uma experiência interativa e visualmente atraente.
+    - **Backend:** A lógica de negócio, manipulação de dados de series do IPEA e integração com IA (Mistral 7B) é tratada pelas camadas de **services**, **controllers**, **models**, e **utils**, todas desenvolvidas com **Python**. A tecnologia de **NLP (Processamento de Linguagem Natural)** ainda não foi definida, mas será uma parte essencial da aplicação para melhorar a geração de relatórios e interação com dados.
 
-* Finalmente, a modularização oferece uma estrutura clara, permitindo que cada parte do sistema seja desenvolvida e testada de forma independente, mas também facilita a transição para uma arquitetura distribuída ou baseada em microsserviços no futuro, caso a necessidade surja.
+* ### Visualização da Arquitetura do Projeto
 
-Essa arquitetura foi pensada para ser eficiente no curto prazo e flexível o suficiente para crescer à medida que o projeto se desenvolve, garantindo que possamos expandir e escalar conforme novas necessidades e desafios aparecerem.
+![alt text](diagramas/arquitetura.png)
 
+---
 
-## A arquitetura do projeto é organizada da seguinte forma:
+## 🗂️ Estrutura do Projeto
 
-* interface/: Responsável pela camada de apresentação, organiza toda a interação visual com o usuário, contendo componentes e páginas da aplicação, como layouts, inputs, filtros e dashboards interativos.
+![alt text](diagramas/estrutura.png)
 
-* interface/views/: Subdiretório da interface que organiza as telas principais da aplicação, como visão geral, relatórios financeiros e alertas, facilitando a separação de responsabilidades por contexto visual.
+---
 
-* interface/views/styles: Estilização das interfaces.
+## 📂 Descrição dos Diretórios
 
-* controllers/: A camada de controle, que faz a ponte entre a interface e a lógica de negócio, orquestrando as interações entre as views e os serviços e recebendo inputs do usuário para retornar dados processados.
+### 🔷`interface/`
+- **Função:** Camada de apresentação (UI).
+- **Tecnologias:** Streamlit + Python.
+- **Responsável por:** Renderizar páginas e coletar inputs do usuário.
 
-* services/: Contém a lógica de negócio da aplicação, incluindo regras, transformações de dados e integrações com componentes externos, como o Haystack para tarefas de sumarização de textos financeiros, geração de relatórios inteligentes e busca semântica.
+### 🔷`controllers/`
+- **Função:** Camada de controle.
+- **Tecnologias:** Python.
+- **Responsável por:** Orquestrar fluxos entre a interface e a lógica de negócio.
 
-* models/: Define as entidades principais do sistema (como Relatório, IndicadorFinanceiro, Tendência), padronizando os dados e facilitando a validação e o mapeamento entre as diferentes camadas.
+### 🔷`services/`
+- **Função:** Lógica de negócio.
+- **Tecnologias:** Python, API IPEA, Pandas, Mistral 7B (LLM), Plotly, entre outras.
+- **Responsável por:**  Realizar a conexão com a biblioteca ipeadatapy para obter as séries financeiras, filtrar, processar e gerar relatórios financeiros detalhados, além de interagir com o modelo de LLM (Mistral 7B) para a geração de relatórios.
+- **Nota:** A tecnologia de **NLP (Processamento de Linguagem Natural)** ainda não foi definida, mas será uma parte importante para a geração e aprimoramento dos relatórios financeiros.
 
-* models/search: Camada de acesso as implementações das funções de pesquisa por parte do back-end que serão utilizadas por chamadas via front-end.
+### 🔷`models/`
+- **Função:** Representação das entidades do sistema.
+- **Tecnologias:** Python puro.
+- **Responsável por:** Padronizar e encapsular os dados do domínio.
 
-* data/: Camada de acesso a dados, encarregada de gerenciar o armazenamento persistente, como bancos de dados e indexadores do Haystack (Elasticsearch ou FAISS), além de realizar operações de inserção, busca e atualização de dados.
+### 🔷`data/`
+- **Função:** Persistência e autenticação.
+- **Tecnologias:** SQLite (armazenamento), Google Identity (login), Python.
+- **Responsável por:** Armazenar histórico de relatórios e gerenciar autenticação de usuários.
 
-* workers/: Contém os workers responsáveis por executar tarefas assíncronas, como geração de relatórios automáticos, processamento de grandes volumes de texto com Haystack e disparo de alertas com base em tendências detectadas, usando o Celery para orquestração.
+### 🔷`utils/`
+- **Função:** Funções auxiliares reutilizáveis.
+- **Tecnologias:** Python e outras bibliotecas de suporte.
+- **Responsável por:** Suporte geral a funções como formatações, logs e conversões.
 
-* utils/: Funções auxiliares que são reutilizáveis em várias partes do projeto, como tratamento de texto, conversões de tempo e helpers para gráficos e logs, mantendo o código principal limpo e reutilizável.
+### 🔷`main.py`
+- **Função:** Ponto de entrada da aplicação.
+- **Tecnologias:** Python.
+- **Responsável por:** Inicialização de dependências e execução da aplicação.
 
-* main.py: Arquivo de ponto de entrada da aplicação, que carrega as configurações e dependências, direcionando para a interface e organizando a navegação da aplicação.
+---
+
+## 🔁 Relações Entre Diretórios
+
+| Diretório     | Pode chamar...                              | Pode ser chamado por...                   |
+|---------------|----------------------------------------------|-------------------------------------------|
+| `interface/`  | `controllers/`                               | `main.py`                                 |
+| `controllers/`| `services/`, `models/`, `utils/`             | `interface/`                              |
+| `services/`   | `data/`, `models/`, `utils/`                 | `controllers/`                            |
+| `models/`     | `utils/` (opcional)                          | `services/`, `controllers/`, `data/`      |
+| `data/`       | `models/`, `utils/` (opcional)               | `services/`                               |
+| `utils/`      | —                                            | Todos, exceto `interface/` (idealmente)   |
+| `main.py`     | Todos                                        | —                                         |
+
+---
+
+## 🚀 Tecnologias Principais
+
+- **Frontend:** Streamlit
+- **Backend:** Python
+- **Banco de Dados:** SQLite
+- **Autenticação:** Google Identity
+- **IA:** Mistral 7B
+- **Gráficos:** Plotly
+- **Manipulação de Dados:** Pandas
+- **NLP (Processamento de Linguagem Natural):** Tecnologia ainda não definida
+
+---
+
+## 📌 Requisitos
+
+- Python 3.10+
+- Streamlit
+- pandas, plotly, mistral-client (ou wrapper), etc.
+
+---
+
+## ▶️ Executando o Projeto
+
+```bash
+# Instale as dependências
+pip install -r requirements.txt
+
+# Execute a aplicação
+streamlit run main.py
+```
+
+---
+
+## 🌐 Deploy
+
+* O deploy será realizado utilizando o sistema de nuvem do Streamlit, o ***Streamlit Community Cloud***.

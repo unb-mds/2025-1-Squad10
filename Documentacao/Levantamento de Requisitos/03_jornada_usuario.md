@@ -1,77 +1,26 @@
 # 🗺️ Jornada do Usuário  
-**Projeto “Relatórios do IPEA” — Toró de Ideias**
+**Projeto Gov Insights - “Relatórios do IPEA” — Toró de Ideias**
 
-## 🎯 O que precisamos resolver e por quê?
+## **Perfil do Usuário**:
+- 🏛️ **Cidadãos**: Pessoas que buscam informações sobre os dados financeiros e suas implicações.
+- 📰 **Pesquisadores**: Interessados em análises detalhadas sobre as tendências econômicas.
+- 🧑‍⚖️ **Gestores Públicos**: Precisam de relatórios e alertas para embasar decisões rápidas.
 
-**Objetivo central:**  
-Promover **inteligência**, **automação** e **acessibilidade** na análise e divulgação de dados financeiros públicos.
+## **Problema**:
+A dificuldade de acesso e a complexidade da análise dos dados financeiros do governo.
 
-### Problemas identificados:
-- Acesso difícil ou técnico demais aos dados financeiros.
-- Falta de padronização na apresentação das informações.
-- Baixa capacidade de monitoramento em tempo real de gastos públicos.
-- Dificuldade em interpretar variações e padrões financeiros.
-- Falta de ferramentas visuais e acessíveis para diferentes perfis de usuários.
-
-### Soluções propostas:
-- Democratizar o acesso a dados financeiros com linguagem clara e visual.
-- Gerar relatórios automatizados e personalizados com base em filtros específicos.
-- Implementar dashboards interativos para facilitar a navegação e análise.
-- Utilizar IA (NLP) para gerar resumos explicativos e alertas inteligentes.
-- Apoiar a prestação de contas com visualizações impactantes e transparentes.
-
+## **Solução**:
+Uma plataforma simples, interativa e automatizada para visualização e análise dos dados financeiros do IPEA, que inclui:
+1. **Gráficos interativos** baseados em **Plotly**.
+2. **Geração de relatórios automáticos** utilizando **Mistral-7B**.
+3. **Sistema de alertas** para mudanças importantes nos dados financeiros.
 ---
 
-## 👥 Quem está envolvido e quem se beneficia?
-
-### Usuários beneficiados:
-- 🏛️ Cidadãos em geral  
-- 📊 Instituições de pesquisa e ONGs  
-- 📰 Jornalistas e repórteres investigativos  
-- 💼 Contadores, auditores e analistas financeiros  
-- 🏢 Empresas e bancos  
-- 🧰 Engenheiros públicos (infraestrutura, energia, etc.)  
-- 🧑‍⚖️ Órgãos governamentais e gestores públicos  
-
-### Equipe de desenvolvimento:
-| Função              | Responsabilidades principais |
-|---------------------|------------------------------|
-| **Desenvolvedores** | Backend (FastAPI), frontend (Streamlit), integrações |
-| **Cientistas de Dados** | NLP, visualização, modelagem e análises |
-| **Analistas** | Definição de métricas, validação e regras de negócio |
-| **Gestores Públicos** | Usuários estratégicos e tomadores de decisão |
-| **Usuários Técnicos** | Profissionais que consomem insights específicos |
-| **Designers** _(opcional)_ | Design de interfaces acessíveis e intuitivas |
-
----
-
-## 🧩 Como vamos resolver o problema?
-
-### Ações e soluções práticas:
-- Criação de uma **dashboard interativa** com **Streamlit**, HTML e CSS responsivo.
-- Aplicação de **modelos de NLP open-source** (BERTopic, T5, BART) para geração de resumos e insights.
-- Automação do pipeline com ferramentas como **Prefect**, Airflow ou cron jobs.
-- Implementação de **filtros dinâmicos** (órgão, município, data, categoria).
-- Geração de **relatórios exportáveis** (.pdf, .html, .csv).
-- Interface com **acessibilidade** para usuários técnicos e não técnicos.
-- Emissão de **alertas inteligentes** sobre variações incomuns nos dados.
-- Validação constante com feedback de usuários e especialistas.
-- Estruturação do projeto como **código aberto reutilizável**.
-
----
-
-## 🧠 Tecnologias
-
-| Categoria                     | Ferramentas Utilizadas                        |
-|------------------------------|-----------------------------------------------|
-| Framework principal          | Streamlit + Haystack                         |
-| NLP e modelagem de tópicos   | Hugging Face Transformers + BERTopic         |
-| Pré-processamento de texto   | spaCy + Pandas                               |
-| Visualização e relatórios    | Plotly + Streamlit                           |
-| Backend/API                  | FastAPI                                      |
-| Orquestração e automação     | Prefect (ou Airflow)                         |
-| Monitoramento e validação    | Evidently                                    |
-
+### **Tecnologias que Facilitam a Jornada do Usuário**:
+- **API do IPEA**: Para fornecer dados financeiros atualizados.
+- **Streamlit**: Para criar uma interface interativa e fácil de usar.
+- **Mistral-7B**: Para gerar resumos financeiros automáticos.
+- **Plotly**: Para criar gráficos interativos e visualizações em tempo real.
 ---
 
 ## 🔄 Visão Integrada da Jornada
