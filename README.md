@@ -54,58 +54,59 @@ O projeto é desenvolvido pelos seguintes integrantes:
   <tr>
     <td align="center">
       <a href="https://github.com/EricAraujoBsB">
-        <img src="Documentacao/assets/Colabs/Eric Gomes.jpeg" width=128px; height= 128px; style="width=128; height=128; object-fit: cover"; alt="Eric Gomes"/><br>
-        <p><b>Eric Gomes de Araujo</b></p>
+        <img src="Documentacao/assets/Colabs/Eric Gomes.jpeg" width="33%;" alt="Eric Gomes"/><br>
+        <sub><b>Eric Gomes de Araujo</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/Lithuania0">
-        <img src="Documentacao/assets/Colabs/Mayra Lithuania.jpeg" width=128px; height= 128px; style="width=128; height=128; object-fit: cover"; alt="Mayra Lithuania"/><br>
-        <p><b>Mayra Lithuania</b></p>
+        <img src="Documentacao/assets/Colabs/Mayra Lithuania.jpeg" width="33%;" alt="Mayra Lithuania"/><br>
+        <sub><b>Mayra Lithuania</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/Brwnds">
-        <img src="Documentacao/assets/Colabs/Brenda.jpeg" width=128px; height=128px; style="width=128; height=128; object-fit: cover"; alt="Brenda Beatriz"/><br>
-        <p><b>Brenda Beatriz</b></p>
+        <img src="Documentacao/assets/Colabs/Brenda.jpeg" width="33%;" alt="Brenda Beatriz"/><br>
+        <sub><b>Brenda Beatriz</b></sub>
       </a>
     </td>
   </tr>
   <tr>
     <td align="center">
       <a href="https://github.com/GFlyan">
-        <img src="Documentacao/assets/Colabs/Guilherme Flyan.jpeg" width=128px; height=128px; style="width=128; height=128; object-fit: cover"; alt="Guilherme Flyan"/><br>
-        <p><b>Guilherme Flyan</b></p>
+        <img src="Documentacao/assets/Colabs/Guilherme Flyan.jpeg" width="33%;" alt="Guilherme Flyan"/><br>
+        <sub><b>Guilherme Flyan</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/eduardar0">
-        <img src="Documentacao/assets/Colabs/Eduarda Rodrigues.jpeg" width=128px; height=128px; style="width=128; height=128; object-fit: cover";;" alt="Eduarda Rodrigues"/><br>
-        <p><b>Eduarda Rodrigues</b></p>
+        <img src="Documentacao/assets/Colabs/Eduarda Rodrigues.jpeg" width="33%;" alt="Eduarda Rodrigues"/><br>
+        <sub><b>Eduarda Rodrigues</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/mariadenis">
-        <img src="Documentacao/assets/Colabs/Maria Eduarda.jpeg" width=128px; height=128px; style="width=128; height=128; object-fit: cover";;" alt="Maria Eduarda"/><br>
-        <p><b>Maria Eduarda</b></p>
+        <img src="Documentacao/assets/Colabs/Maria Eduarda.jpeg" width="33%;" alt="Maria Eduarda"/><br>
+        <sub><b>Maria Eduarda</b></sub>
       </a>
     </td>
   </tr>
   <tr>
     <td align="center">
       <a href="https://github.com/gabegmbr">
-        <img src="Documentacao/assets/Colabs/Gabriel Maciel.jpeg" width=128px; height=128px; style="width=128; height=128; object-fit: cover"; alt="Gabriel Maciel"/><br>
-        <p><b>Gabriel Maciel</b></p>
+        <img src="Documentacao/assets/Colabs/Gabriel Maciel.jpeg" width="50%;" alt="Gabriel Maciel"/><br>
+        <sub><b>Gabriel Maciel</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/Marjoriemitzi">
-        <img src="Documentacao/assets/Colabs/Marjorie.jpeg" width=128px; height=128px; style="width=128; height=128; object-fit: cover"; alt="Marjorie Mitzi"/><br>
-        <p><b>Marjorie Mitzi</b></p>
+        <img src="Documentacao/assets/Colabs/Marjorie.jpeg" width="50%;" alt="Marjorie Mitzi"/><br>
+        <sub><b>Marjorie Mitzi</b></sub>
       </a>
     </td>
   </tr>
 </table>
+
 
 ---
 
