@@ -65,6 +65,7 @@ def date(data_inicio: str = None, data_final: str = None) -> pd.DataFrame:
     
     # Carrega metadados e converte datas para datetime
     series = ipea.metadata()
+    series = series[series["MEASURE"].str.contains("\\$")]
     series["LAST UPDATE"] = pd.to_datetime(series["LAST UPDATE"], errors="coerce")
     
     # Verifica formato das datas
