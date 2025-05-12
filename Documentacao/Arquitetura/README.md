@@ -31,7 +31,7 @@ No contexto desse modelo, o **banco de dados (PostgreSQL)** faz parte da **camad
   
 ### **Visualização da Arquitetura do Projeto**
 
-![alt text](./diagramas/ARQUITETURA.png)
+![alt text](./diagramas/arquitetura.png)
 
 ---
 
