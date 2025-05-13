@@ -43,31 +43,43 @@ def code(phrase: str):
     code = code.sort_values(by='CODE')
     return "Não Encontrado" if code.empty else code
 
-def date(data_inicio:str = None,data_final:str = None):
+def date(data_inicio: str = None, data_final: str = None) -> pd.DataFrame:
     """
-    Explicar a função. Dizer o tipo de dado que são os parametros
-    Forma de data: YYYY-MM-DD
+    Retorna os metadados das séries temporais do IPEA filtrados por intervalo de datas.
+    Parâmetros:
+    - data_inicio (str, opcional): Data inicial no formato 'YYYY-MM-DD'. Se fornecida, filtra as séries a partir desta data.
+    - data_final (str, opcional): Data final no formato 'YYYY-MM-DD'. Se fornecida, filtra as séries até esta data.
+    Regras de filtragem:
+    - Ambos os parâmetros ausentes: Lança ValueError, pois pelo menos uma das datas deve ser especificada.
+    - Apenas data_inicio presente: Retorna séries atualizadas a partir de data_inicio.
+    - Apenas data_final presente: Retorna séries atualizadas até data_final.
+    - Ambos os parâmetros presentes: Retorna séries atualizadas entre data_inicio e data_final, inclusive.
+    Retorna:
+    - pd.DataFrame: DataFrame contendo os metadados das séries filtrados pelo intervalo de datas.
     """
-
     if data_inicio is None and data_final is None:
         raise ValueError("Data de início e data final não podem ser ambas nulas.")
-    
+
+    # Carrega metadados e converte datas para datetime
     series = ipea.metadata()
-    series["LAST UPDATE"] = pd.to_datetime(series["LAST UPDATE"],format="ISO8601")
-    series["LAST UPDATE"] = pd.to_datetime(series["LAST UPDATE"], errors='coerce')
+    series = series[series["MEASURE"].str.contains("\\$")]
+    series["LAST UPDATE"] = pd.to_datetime(series["LAST UPDATE"], errors="coerce")
 
-    # A partir de data_inicio e antes de data_final
-    if data_inicio is not None and data_final is not None:
-        df_filtrado = series[(series["LAST UPDATE"] >= data_inicio) & (series["LAST UPDATE"] <= data_final)]
-        
-    # Após data_inicio
-    if data_final is None:
-        df_filtrado = series[(series["LAST UPDATE"] >= data_inicio)]
+    # Verifica formato das datas
+    try:
+        if data_inicio is not None:
+            data_inicio = pd.to_datetime(data_inicio, format="%Y-%m-%d")
+        if data_final is not None:
+            data_final = pd.to_datetime(data_final, format="%Y-%m-%d")
+    except ValueError as e:
+        raise ValueError(f"Formato de data inválido: {e}")
 
-    # Antes data_final
-    if data_inicio is None:
-        df_filtrado = series[(series["LAST UPDATE"] <= data_final)]
+    # Filtragem eficiente
+    mask = pd.Series([True] * len(series))
+    if data_inicio is not None:
+        mask &= series["LAST UPDATE"] >= data_inicio
+    if data_final is not None:
+        mask &= series["LAST UPDATE"] <= data_final
 
-    return df_filtrado 
-    
+    return series[mask].reset_index(drop=True)
     
