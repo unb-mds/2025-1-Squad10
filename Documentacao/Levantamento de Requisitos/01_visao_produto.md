@@ -38,7 +38,7 @@ Atualmente, dados econômicos e notícias públicas, como as do IPEA, estão dis
 Ela permitirá que qualquer usuário:
 
 - **Explore** dados com filtros temporais, regionais e setoriais;
-- **Visualize** tendências e sentimentos extraídos de notícias públicas;
+- **Visualize** tendências extraídos de notícias públicas;
 - **Gere** relatórios de forma automática e exportável;
 - **Navegue** com uma identidade visual moderna e acessível.
 

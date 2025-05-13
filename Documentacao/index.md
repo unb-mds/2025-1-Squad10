@@ -20,7 +20,7 @@ O projeto busca democratizar o acesso às informações públicas através de re
 
 - Automatizar a coleta e análise de dados financeiros públicos.
 - Facilitar o acesso à informação através de visualizações e relatórios interativos.
-- Aplicar análise de sentimentos e identificação de tópicos em notícias relacionadas.
+- Identificação de tópicos em notícias relacionadas.
 - Estimular a transparência, a cidadania ativa e o uso de dados públicos.
 - Promover boas práticas de desenvolvimento ágil e colaborativo utilizando GitHub e metodologias ágeis.
 ---
