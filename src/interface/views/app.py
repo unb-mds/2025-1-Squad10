@@ -20,7 +20,7 @@ st.set_page_config(
 )
 
 # Estilo CSS
-with open("./src/interface/views/styles/style.css") as f:
+with open("./src/interface/views/styles/style.css", encoding="utf-8") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 # Estado da sessão para controlar a página atual
