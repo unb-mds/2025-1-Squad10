@@ -1,85 +1,122 @@
 import ipeadatapy as ipea
 import pandas as pd
 
-def organization(phrase: str):
+def filtro(
+    organizacao_usuario: str,
+    tema_usuario: str,
+    codigo_usuario: str,
+    data_inicio_usuario: str,
+    data_fim_usuario: str,
+    pais_usuario: str,
+    frequencia_usuario: str,
+    unidade_usuario: str,
+    subtema_usuario: str
+) -> pd.DataFrame:
     """
-    Retorna um dataframe contendo as series com dados financeiros do IPEA de acordo com a string parametrizada referente ao órgão procurado.
+    Filtra os dados do IPEA com base nos critérios fornecidos pelo usuário.
 
-    Caso a busca não seja bem sucedida sera retornado uma string "Não Encontrado".
+    Args:
+        organizacao_usuario (str): Nome ou acrônimo da organização fornecedora dos dados.
+        tema_usuario (str): Nome do tema dos dados.
+        codigo_usuario (str): Código do indicador.
+        data_inicio_usuario (str): Data de início no formato 'YYYY-MM-DD'.
+        data_fim_usuario (str): Data de fim no formato 'YYYY-MM-DD'.
+        pais_usuario (str): Nome do país relacionado aos dados.
+        frequencia_usuario (str): Frequência dos dados (ex. 'mensal', 'anual').
+        unidade_usuario (str): Unidade de medida dos dados (ex. 'milhões', 'percentual').
+        subtema_usuario (str): Nome do subtema dos dados.
+
+    Raises:
+        ValueError: Se as datas fornecidas não estiverem no formato correto.
+
+    Returns:
+        pd.DataFrame: DataFrame com os dados filtrados.
     """
-    series = ipea.metadata()
-    series = series[series["MEASURE"].str.contains("\\$")]
-    series = pd.concat([series[series["SOURCE ACRONYM"].str.lower().str.contains(phrase.lower())],
-                        series[series["SOURCE"].str.lower().str.contains(phrase.lower())]])
-    series = series.sort_values(by='CODE').drop_duplicates()
-    return "Não Encontrado" if series.empty else series
+    # Carrega metadados do IPEA e filtra por medidas em dólares
+    informacoes = ipea.metadata()
+    informacoes = informacoes[informacoes["MEASURE"].str.contains("\\$")]
 
-def theme(phrase: str):
-    """
-    Retorna um dataframe contendo as series com dados financeiros do IPEA de acordo com a string parametrizada referente ao tema procurado.
+    # Filtra pelo código do indicador (ex: 'PIB')
+    if codigo_usuario.strip():
+        informacoes = informacoes[informacoes["CODE"].str.contains(codigo_usuario.upper())]
 
-    Caso a busca não seja bem sucedida sera retornado uma string "Não Encontrado".
-    """
-    getThemeID = ipea.themes()
-    getThemeID = getThemeID[getThemeID['NAME'].str.lower().str.contains(phrase.lower())]
-    found = pd.DataFrame()
-    if not getThemeID.empty:
-        for id in getThemeID['ID']:
-            find = ipea.metadata(theme_id=id)
-            find = find[find['MEASURE'].str.contains("\\$")]
-            found = pd.concat([found, find])
-        found = found.sort_values(by='CODE')
-    return "Não Encontrado" if found.empty else found
-    
-def code(phrase: str):
-    """
-    Retorna um dataframe contendo as series com dados financeiros do IPEA de acordo com a string parametrizada referente ao código procurado.
+    # Filtra pela organização fornecedora (ex: 'IBGE')
+    if organizacao_usuario.strip():
+        informacoes = pd.concat([
+            informacoes[informacoes["SOURCE ACRONYM"].str.lower().str.contains(organizacao_usuario.lower())],
+            informacoes[informacoes["SOURCE"].str.lower().str.contains(organizacao_usuario.lower())]
+        ])
+        informacoes = informacoes.sort_values(by='CODE').drop_duplicates()
 
-    Caso a busca não seja bem sucedida sera retornado uma string "Não Encontrado".
-    """
-    code = ipea.metadata()
-    code = code[code["MEASURE"].str.contains("\\$")]
-    code = code[code["CODE"].str.contains(phrase.upper())]
-    code = code.sort_values(by='CODE')
-    return "Não Encontrado" if code.empty else code
+    # Filtra pelo tema (ex: 'economia', 'educação')
+    if tema_usuario.strip():
+        getThemeID = ipea.themes()
+        getThemeID = getThemeID[getThemeID['NAME'].str.lower().str.contains(tema_usuario.lower())]
+        found = pd.DataFrame()
+        if not getThemeID.empty:
+            for id in getThemeID['ID']:
+                find = ipea.metadata(theme_id=id)
+                found = pd.concat([found, find])
 
-def date(data_inicio: str = None, data_final: str = None) -> pd.DataFrame:
-    """
-    Retorna os metadados das séries temporais do IPEA filtrados por intervalo de datas.
-    Parâmetros:
-    - data_inicio (str, opcional): Data inicial no formato 'YYYY-MM-DD'. Se fornecida, filtra as séries a partir desta data.
-    - data_final (str, opcional): Data final no formato 'YYYY-MM-DD'. Se fornecida, filtra as séries até esta data.
-    Regras de filtragem:
-    - Ambos os parâmetros ausentes: Lança ValueError, pois pelo menos uma das datas deve ser especificada.
-    - Apenas data_inicio presente: Retorna séries atualizadas a partir de data_inicio.
-    - Apenas data_final presente: Retorna séries atualizadas até data_final.
-    - Ambos os parâmetros presentes: Retorna séries atualizadas entre data_inicio e data_final, inclusive.
-    Retorna:
-    - pd.DataFrame: DataFrame contendo os metadados das séries filtrados pelo intervalo de datas.
-    """
-    if data_inicio is None and data_final is None:
-        raise ValueError("Data de início e data final não podem ser ambas nulas.")
+        # Remove duplicatas após concatenação
+        if not found.empty:
+            informacoes = pd.concat([informacoes, found]).drop_duplicates()
 
-    # Carrega metadados e converte datas para datetime
-    series = ipea.metadata()
-    series = series[series["MEASURE"].str.contains("\\$")]
-    series["LAST UPDATE"] = pd.to_datetime(series["LAST UPDATE"], errors="coerce")
+    # Filtra pelo intervalo de datas
+    if data_inicio_usuario.strip() or data_fim_usuario.strip():
+        informacoes["LAST UPDATE"] = pd.to_datetime(informacoes["LAST UPDATE"], errors="coerce")
 
-    # Verifica formato das datas
-    try:
-        if data_inicio is not None:
-            data_inicio = pd.to_datetime(data_inicio, format="%Y-%m-%d")
-        if data_final is not None:
-            data_final = pd.to_datetime(data_final, format="%Y-%m-%d")
-    except ValueError as e:
-        raise ValueError(f"Formato de data inválido: {e}")
+        try:
+            if data_inicio_usuario.strip():
+                data_inicio_usuario = pd.to_datetime(data_inicio_usuario, format="%Y-%m-%d")
+            if data_fim_usuario.strip():
+                data_fim_usuario = pd.to_datetime(data_fim_usuario, format="%Y-%m-%d")
+        except ValueError as e:
+            raise ValueError(f"Formato de data inválido: {e}")
 
-    # Filtragem eficiente
-    mask = pd.Series([True] * len(series))
-    if data_inicio is not None:
-        mask &= series["LAST UPDATE"] >= data_inicio
-    if data_final is not None:
-        mask &= series["LAST UPDATE"] <= data_final
+        # Filtra apenas os dados que estão dentro do intervalo de datas
+        mask = pd.Series([True] * len(informacoes))
+        if data_inicio_usuario is not None:
+            mask &= informacoes["LAST UPDATE"] >= data_inicio_usuario
+        if data_fim_usuario is not None:
+            mask &= informacoes["LAST UPDATE"] <= data_fim_usuario
 
-    return series[mask].reset_index(drop=True)
-    
+        informacoes = informacoes[mask].reset_index(drop=True)
+
+    # Filtra pelo país
+    if pais_usuario.strip():
+        informacoes = informacoes[informacoes["COUNTRY"].str.lower().str.contains(pais_usuario.lower())]
+
+    # Filtra pela frequência dos dados
+    if frequencia_usuario.strip():
+        informacoes = informacoes[informacoes["FREQUENCY"].str.lower().str.contains(frequencia_usuario.lower())]
+
+    # Filtra pela unidade de medida
+    if unidade_usuario.strip():
+        informacoes = informacoes[informacoes["UNIT"].str.lower().str.contains(unidade_usuario.lower())]
+
+    # Filtra pelo subtema
+    if subtema_usuario.strip():
+        informacoes = informacoes[informacoes["SUBTHEME"].str.lower().str.contains(subtema_usuario.lower())]
+
+    return informacoes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
