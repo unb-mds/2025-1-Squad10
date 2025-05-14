@@ -1,8 +1,52 @@
 import ipeadatapy as ipea
 import pandas as pd
 
-def filtro(organizacao_usuario:str, tema_usuario:str, codigo_usuario:str, data_inicio_usuario:str, data_fim_usuario:str, pais_usuario:str, frequencia_usuario:str, unidade_usuario:str, subtema_usuario:str):
-    # Carrega metadados iniciais
+def filtro(organizacao_usuario: str, tema_usuario: str, codigo_usuario: str, data_inicio_usuario: str, data_fim_usuario: str, pais_usuario: str, frequencia_usuario: str, unidade_usuario: str, subtema_usuario: str) -> pd.DataFrame:
+    """
+    Filtra os metadados do IPEA com base nos critérios fornecidos pelo usuário.
+    
+    Parâmetros:
+    -----------
+    organizacao_usuario : str
+        Nome ou acrônimo da organização que publicou os dados.
+    tema_usuario : str
+        Nome do tema dos dados.
+    codigo_usuario : str
+        Código específico do indicador (por exemplo, 'IGP-DI').
+    data_inicio_usuario : str
+        Data de início para o filtro, no formato 'AAAA-MM-DD'.
+    data_fim_usuario : str
+        Data de fim para o filtro, no formato 'AAAA-MM-DD'.
+    pais_usuario : str
+        País ao qual os dados se referem.
+    frequencia_usuario : str
+        Frequência dos dados (por exemplo, 'anual', 'mensal').
+    unidade_usuario : str
+        Unidade de medida dos dados (por exemplo, 'USD', 'toneladas').
+    subtema_usuario : str
+        Subtema relacionado aos dados.
+    
+    Retorna:
+    --------
+    pd.DataFrame
+        DataFrame com os metadados filtrados, removendo duplicatas.
+    
+    Exceções:
+    ----------
+    ValueError
+        Se as datas fornecidas estiverem em um formato inválido.
+    
+    Exemplo:
+    --------
+    >>> filtro("IBGE", "", "", "2020-01-01", "2023-12-31", "Brasil", "anual", "USD", "")
+    
+    Notas:
+    ------
+    - Se nenhum filtro for especificado, a função retorna todos os metadados disponíveis.
+    - Filtra apenas os metadados que possuem a medida com símbolo "$".
+    """
+
+    # Carrega metadados iniciais e filtra por medidas com símbolo "$"
     informacoes = ipea.metadata()
     informacoes = informacoes[informacoes["MEASURE"].str.contains("\\$")]
     
@@ -36,6 +80,7 @@ def filtro(organizacao_usuario:str, tema_usuario:str, codigo_usuario:str, data_i
         except ValueError as e:
             raise ValueError(f"Formato de data inválido: {e}")
 
+        # Cria máscara para filtrar por data
         date_mask = pd.Series([True] * len(informacoes))
         if data_inicio is not None:
             date_mask &= informacoes["LAST UPDATE"] >= data_inicio
