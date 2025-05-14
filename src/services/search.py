@@ -1,9 +1,10 @@
 import ipeadatapy as ipea
 import pandas as pd
 
+
 def filtro(organizacao_usuario: str, tema_usuario: str, codigo_usuario: str, data_inicio_usuario: str, data_fim_usuario: str, pais_usuario: str, frequencia_usuario: str, unidade_usuario: str, subtema_usuario: str) -> pd.DataFrame:
     """
-    Filtra os metadados do IPEA com base nos critérios fornecidos pelo usuário.
+    Filtra os metadados do IPEA com base nos critérios fornecidos pelo usuário e prepara os dados para visualização.
     
     Parâmetros:
     -----------
@@ -29,21 +30,12 @@ def filtro(organizacao_usuario: str, tema_usuario: str, codigo_usuario: str, dat
     Retorna:
     --------
     pd.DataFrame
-        DataFrame com os metadados filtrados, removendo duplicatas.
+        DataFrame com os metadados filtrados, removendo duplicatas e pré-processado para visualização.
     
     Exceções:
     ----------
     ValueError
         Se as datas fornecidas estiverem em um formato inválido.
-    
-    Exemplo:
-    --------
-    >>> filtro("IBGE", "", "", "2020-01-01", "2023-12-31", "Brasil", "anual", "USD", "")
-    
-    Notas:
-    ------
-    - Se nenhum filtro for especificado, a função retorna todos os metadados disponíveis.
-    - Filtra apenas os metadados que possuem a medida com símbolo "$".
     """
 
     # Carrega metadados iniciais e filtra por medidas com símbolo "$"
@@ -106,5 +98,14 @@ def filtro(organizacao_usuario: str, tema_usuario: str, codigo_usuario: str, dat
 
     # Junta todos os filtros e remove duplicatas
     informacoes_final = pd.concat(filtros).drop_duplicates().reset_index(drop=True)
+
+    # Remove valores nulos e organiza colunas para visualização
+    informacoes_final.dropna(inplace=True)
+    informacoes_final.sort_values(by=["LAST UPDATE", "CODE"], ascending=[False, True], inplace=True)
+
+    # Prepara para gráficos: conversão para séries temporais
+    if not informacoes_final.empty and "LAST UPDATE" in informacoes_final.columns:
+        informacoes_final.set_index("LAST UPDATE", inplace=True)
+        informacoes_final.sort_index(inplace=True)
 
     return informacoes_final
