@@ -1,6 +1,6 @@
 # 📄 Ata da Reunião – Sprint 6
 
-**📅 Data:** 13 de maio de 2025  
+**📅 Data:** 06 de maio de 2025  
 **🕒 Horário:** 21h30  
 
 ---
