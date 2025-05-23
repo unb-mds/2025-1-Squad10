@@ -29,8 +29,7 @@
 ---
 
 # 🗺️ Story Map - Projeto Relatórios do IPEA
-
-<table style="width: 100%; background-color:white; border: 1px solid black; border-collapse: collapse;">
+<table style="width: 100%; background-color:white; border: 1px solid black; border-collapse: collapse; color: #000000">
   <thead>
     <tr style="height: 43px; background-color: #f2f2f2; border: 1px solid black;">
       <th style="width: 15%; text-align: center; font-weight: bold; height: 43px; border: 1px solid black;">Epics</th>
@@ -47,12 +46,12 @@
       <td style="border: 1px solid black;">Permite que o pipeline seja alimentado com dados financeiros em tempo real através da API.</td>
     </tr>
     <tr>
-      <td style="border: 1px solid black;">Como analista, quero que os dados sejam obtidos automaticamente (de fontes como API ou scraping), para garantir atualizações frequentes.</td>
+      <td style="border: 1px solid black;">Como desenvolvedor, quero que os dados sejam obtidos automaticamente da API, para garantir atualizações frequentes.</td>
       <td style="border: 1px solid black;">Automatiza a coleta de dados financeiros, garantindo que a base de dados esteja sempre atualizada.</td>
     </tr>
     <tr>
       <td rowspan="2" style="text-align: center; border: 1px solid black;">Feature 1.2: Limpeza e preparação dos dados</td>
-      <td style="border: 1px solid black;">Como cientista de dados, quero normalizar datas, moedas e categorias, para garantir consistência na análise.</td>
+      <td style="border: 1px solid black;">Como desenvolvedor, quero normalizar datas, moedas e categorias, para garantir consistência na análise.</td>
       <td style="border: 1px solid black;">Normaliza dados para garantir a consistência nas análises financeiras.</td>
     </tr>
     <tr>
@@ -62,11 +61,11 @@
     <tr>
       <td rowspan="6" style="text-align: center; writing-mode: vertical-lr; border: 1px solid black;">Análise Semântica e Geração de Insights com LLM</td>
       <td rowspan="2" style="text-align: center; border: 1px solid black;">Feature 2.1: Extração de tópicos relevantes</td>
-      <td style="border: 1px solid black;">Como cientista de dados, quero aplicar o LLM Mistral-7B nos textos financeiros, para identificar automaticamente os principais tópicos abordados.</td>
+      <td style="border: 1px solid black;">Como desenvolvedor, quero aplicar o LLM Mistral-7B nos textos financeiros, para identificar automaticamente os principais tópicos abordados.</td>
       <td style="border: 1px solid black;">Aplica técnicas de LLM para identificar automaticamente os tópicos relevantes nos dados financeiros.</td>
     </tr>
     <tr>
-      <td style="border: 1px solid black;">Como analista público, quero visualizar os tópicos e exemplos de textos relacionados, para entender melhor as áreas críticas.</td>
+      <td style="border: 1px solid black;">Como usuário, quero visualizar os tópicos e exemplos de textos relacionados, para entender melhor as áreas críticas.</td>
       <td style="border: 1px solid black;">Fornece uma visualização dos tópicos financeiros, facilitando a análise de áreas críticas.</td>
     </tr>
     <tr>
@@ -78,8 +77,8 @@
     </tr>
     <tr>
       <td rowspan="2" style="text-align: center; border: 1px solid black;">Feature 2.3: Emissão de alertas com base em anomalias</td>
-      <td style="border: 1px solid black;">Como gestor, quero receber um alerta automático quando houver aumento anormal em um gasto específico, para tomar decisões corretivas.</td>
-      <td style="border: 1px solid black;">Notifica os gestores sobre variações significativas em gastos, ajudando na tomada de decisões corretivas.</td>
+      <td style="border: 1px solid black;">Como usuário, quero receber um alerta automático quando houver aumento anormal em um série específica, para tomar decisões corretivas.</td>
+      <td style="border: 1px solid black;">Notifica os usuários sobre variações significativas nas séries, ajudando na tomada de decisões corretivas.</td>
     </tr>
     <tr>
       <td style="border: 1px solid black;">Como desenvolvedor, quero configurar regras e condições para geração de alertas, para evitar falsos positivos.</td>
@@ -88,7 +87,7 @@
     <tr>
       <td rowspan="4" style="text-align: center; writing-mode: vertical-lr; border: 1px solid black;">Visualização dos Dados e Relatórios</td>
       <td rowspan="2" style="text-align: center; border: 1px solid black;">Feature 3.1: Painel interativo com dados e textos</td>
-      <td style="border: 1px solid black;">Como gestor público, quero visualizar os dados e relatórios em uma interface clara, para facilitar a análise e tomada de decisão.</td>
+      <td style="border: 1px solid black;">Como usuário, quero visualizar os dados e relatórios em uma interface clara, para facilitar a análise e tomada de decisão.</td>
       <td style="border: 1px solid black;">Proporciona uma interface clara e intuitiva para a visualização de dados financeiros.</td>
     </tr>
     <tr>
@@ -97,7 +96,7 @@
     </tr>
     <tr>
       <td rowspan="2" style="text-align: center; border: 1px solid black;">Feature 3.2: Exportação e compartilhamento dos relatórios</td>
-      <td style="border: 1px solid black;">Como analista, quero exportar os relatórios gerados em formato PDF ou CSV, para enviar por e-mail ou arquivar.</td>
+      <td style="border: 1px solid black;">Como usuário, quero exportar os relatórios gerados em formato PDF ou CSV, para enviar por e-mail ou arquivar.</td>
       <td style="border: 1px solid black;">Facilita a exportação dos relatórios para formatos populares, permitindo fácil compartilhamento e arquivamento.</td>
     </tr>
     <tr>
@@ -109,8 +108,6 @@
       <td style="border: 1px solid black;">Cria endpoints dinâmicos para que o Streamlit acesse dados financeiros em tempo real.</td>
     </tr>
     <tr>
-      <td style="border: 1px solid black;">Como analista, quero poder enviar novos arquivos via API, para manter a base sempre atualizada.</td>
-      <td style="border: 1px solid black;">Permite o envio contínuo de dados via API, mantendo o sistema atualizado com novos arquivos financeiros.</td>
     </tr>
     <tr>
       <td rowspan="2" style="text-align: center; border: 1px solid black;">Feature 4.2: Orquestração de pipelines</td>
@@ -118,8 +115,6 @@
       <td style="border: 1px solid black;">Agendamentos diários para garantir que o pipeline esteja sempre executando e os relatórios atualizados.</td>
     </tr>
     <tr>
-      <td style="border: 1px solid black;">Como analista, quero ser notificado em caso de erro no processamento, para poder corrigir rapidamente.</td>
-      <td style="border: 1px solid black;">Envia notificações para analistas em caso de falhas no processamento, permitindo correções rápidas.</td>
     </tr>
     <tr>
       <td rowspan="4" style="text-align: center; writing-mode: vertical-lr; border: 1px solid black;">Qualidade, Validação e Documentação</td>
@@ -128,7 +123,7 @@
       <td style="border: 1px solid black;">Garantir que o sistema funcione corretamente através de testes automatizados.</td>
     </tr>
     <tr>
-      <td style="border: 1px solid black;">Como cientista de dados, quero validar a veracidade e qualidade dos relatórios gerados.</td>
+      <td style="border: 1px solid black;">Como engenheiro de dados, quero validar a veracidade e qualidade dos relatórios gerados.</td>
       <td style="border: 1px solid black;">Valida a precisão e qualidade dos relatórios financeiros gerados pelo sistema.</td>
     </tr>
     <tr>
