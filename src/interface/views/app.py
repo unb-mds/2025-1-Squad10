@@ -34,26 +34,33 @@ def change_page(page_name):
 # Sidebar
 with st.sidebar:
     st.title("IPEA")
-    st.text_input("🔍 Search for...")
-    st.markdown("### Navegação")
     
-    # Botões de navegação
-    if st.button("Dashboard"):
-        change_page("Dashboard")
-    if st.button("Relatórios"):
-        change_page("Relatórios")
-    if st.button("Alertas"):
-        change_page("Alertas")
-    if st.button("Análises inteligentes"):
-        change_page("Análises inteligentes")
-    if st.button("Dados"):
-        change_page("Dados")
-    
-    st.markdown("---")
-    if st.button("User"):
-        change_page("User")
-    if st.button("Configurações"):
-        change_page("Configurações")
+    if not st.user.is_logged_in:
+        st.button("Log in with Google", on_click=st.login)
+    else:
+        st.text_input("🔍 Search for...")
+        st.markdown("### Navegação")
+        
+        # Botões de navegação
+        
+        if st.button("Dashboard"):
+            change_page("Dashboard")
+        if st.button("Relatórios"):
+            change_page("Relatórios")
+        if st.button("Alertas"):
+            change_page("Alertas")
+        if st.button("Análises inteligentes"):
+            change_page("Análises inteligentes")
+        if st.button("Dados"):
+            change_page("Dados")
+        
+        st.markdown("---")
+        if st.button("User"):
+            change_page("User")
+        if st.button("Configurações"):
+            change_page("Configurações")
+        if st.button("Logout"):
+            st.logout()
 
 # Funções simuladas
 def get_total_receitas(): return 50800, 28.4
@@ -148,18 +155,23 @@ def main_page():
 
 
 # Renderização condicional da página
-if st.session_state.current_page == "Dashboard":
-    main_page()
-    
-elif st.session_state.current_page == "Relatórios":
-    relatorios_page()
-elif st.session_state.current_page == "Alertas":
-    alertas_page()
-elif st.session_state.current_page == "Análises inteligentes":
-    analises_page()
-elif st.session_state.current_page == "Dados":
-    dados_page()
-elif st.session_state.current_page == "User":
-    user_page()
-elif st.session_state.current_page == "Configurações":
-    configuracoes_page()
+
+if st.user.is_logged_in:
+    if st.session_state.current_page == "Dashboard":
+        main_page()
+        
+    elif st.session_state.current_page == "Relatórios":
+        relatorios_page()
+    elif st.session_state.current_page == "Alertas":
+        alertas_page()
+    elif st.session_state.current_page == "Análises inteligentes":
+        analises_page()
+    elif st.session_state.current_page == "Dados":
+        dados_page()
+    elif st.session_state.current_page == "User":
+        user_page()
+    elif st.session_state.current_page == "Configurações":
+        configuracoes_page()
+
+else:
+    st.title("Logue para usar aplicação.")

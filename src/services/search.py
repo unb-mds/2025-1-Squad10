@@ -1,73 +1,164 @@
+# backend.py
+
 import ipeadatapy as ipea
 import pandas as pd
+import plotly.express as px
 
-def organization(phrase: str):
+
+def get_by_code(codigo: str) -> pd.DataFrame:
     """
-    Retorna um dataframe contendo as series com dados financeiros do IPEA de acordo com a string parametrizada referente ao órgão procurado.
+    Retorna os dados de séries temporais do IPEA a partir de um código específico de indicador.
 
-    Caso a busca não seja bem sucedida sera retornado uma string "Não Encontrado".
+    Parâmetros:
+    -----------
+    codigo : str
+        Código do indicador, por exemplo 'PNAD12_PESSOAS12'.
+
+    Retorno:
+    --------
+    pd.DataFrame
+        DataFrame com os dados da série temporal correspondente ao código.
     """
-    series = ipea.metadata()
-    series = series[series["MEASURE"].str.contains("\\$")]
-    series = pd.concat([series[series["SOURCE ACRONYM"].str.lower().str.contains(phrase.lower())],
-                        series[series["SOURCE"].str.lower().str.contains(phrase.lower())]])
-    series = series.sort_values(by='CODE').drop_duplicates()
-    return "Não Encontrado" if series.empty else series
+    return ipea.timeseries(codigo)
 
-def theme(phrase: str):
+
+def get_by_theme(theme_nome: str) -> pd.DataFrame:
     """
-    Retorna um dataframe contendo as series com dados financeiros do IPEA de acordo com a string parametrizada referente ao tema procurado.
+    Retorna os metadados de todos os indicadores associados a um tema específico.
 
-    Caso a busca não seja bem sucedida sera retornado uma string "Não Encontrado".
+    Parâmetros:
+    -----------
+    theme_nome : str
+        Nome (ou parte do nome) do tema. Busca é feita de forma case-insensitive.
+
+    Retorno:
+    --------
+    pd.DataFrame
+        DataFrame com os metadados de todos os indicadores encontrados no tema.
+
+    Erros:
+    ------
+    ValueError
+        Se o tema informado não for encontrado na base de dados.
     """
-    getThemeID = ipea.themes()
-    getThemeID = getThemeID[getThemeID['NAME'].str.lower().str.contains(phrase.lower())]
-    found = pd.DataFrame()
-    if not getThemeID.empty:
-        for id in getThemeID['ID']:
-            find = ipea.metadata(theme_id=id)
-            find = find[find['MEASURE'].str.contains("\\$")]
-            found = pd.concat([found, find])
-        found = found.sort_values(by='CODE')
-    return "Não Encontrado" if found.empty else found
-    
-def code(phrase: str):
+    # Busca todos os temas disponíveis
+    temas = ipea.themes()
+
+    # Filtra pelo nome informado (ignora maiúsculas/minúsculas)
+    temas_filtrados = temas[temas['NAME'].str.lower().str.contains(theme_nome.lower())]
+
+    if temas_filtrados.empty:
+        raise ValueError(f"Tema '{theme_nome}' não encontrado.")
+
+    # Para cada ID de tema encontrado, busca os metadados
+    lista_dfs = [ipea.metadata(theme_id=theme_id) for theme_id in temas_filtrados["ID"]]
+
+    # Junta todos os DataFrames em um único DataFrame
+    df_concatenado = pd.concat(lista_dfs, ignore_index=True)
+
+    return df_concatenado
+
+
+def filtro(filtros: dict) -> pd.DataFrame:
     """
-    Retorna um dataframe contendo as series com dados financeiros do IPEA de acordo com a string parametrizada referente ao código procurado.
+    Aplica filtros aos metadados dos indicadores do IPEA.
 
-    Caso a busca não seja bem sucedida sera retornado uma string "Não Encontrado".
+    Parâmetros:
+    -----------
+    filtros : dict
+        Dicionário contendo os filtros a serem aplicados. Chaves possíveis:
+        {
+            "codigo": str,
+            "tema": str,
+            "organizacao": str,
+            "pais": str,
+            "frequencia": str,
+            "unidade": str,
+            "subtema": str,
+            "data_inicio": str no formato 'YYYY-MM-DD',
+            "data_fim": str no formato 'YYYY-MM-DD'
+        }
+
+    Retorno:
+    --------
+    pd.DataFrame
+        DataFrame contendo os metadados filtrados de acordo com os critérios.
     """
-    code = ipea.metadata()
-    code = code[code["MEASURE"].str.contains("\\$")]
-    code = code[code["CODE"].str.contains(phrase.upper())]
-    code = code.sort_values(by='CODE')
-    return "Não Encontrado" if code.empty else code
+    # Busca metadados gerais
+    df = ipea.metadata()
 
-def date(data_inicio:str = None,data_final:str = None):
+    # Aplicação de filtros textuais diretos
+    for chave, coluna in {
+        "codigo": "CODE",
+        "organizacao": "SOURCE",
+        "pais": "COUNTRY",
+        "frequencia": "FREQUENCY",
+        "unidade": "UNIT",
+        "subtema": "SUBTHEME"
+    }.items():
+        if filtros.get(chave):
+            df = df[df[coluna].str.lower().str.contains(filtros[chave].lower(), na=False)]
+
+    # Filtro por tema (mais robusto)
+    if filtros.get("tema"):
+        try:
+            tema_df = get_by_theme(filtros["tema"])
+            df = pd.merge(df, tema_df, how="inner")
+        except ValueError as e:
+            raise e
+
+    # Filtro por datas de atualização
+    df["LAST UPDATE"] = pd.to_datetime(df["LAST UPDATE"], errors="coerce")
+
+    data_inicio = pd.to_datetime(filtros.get("data_inicio"), errors="coerce") if filtros.get("data_inicio") else None
+    data_fim = pd.to_datetime(filtros.get("data_fim"), errors="coerce") if filtros.get("data_fim") else None
+
+    if pd.notnull(data_inicio):
+        df = df[df["LAST UPDATE"] >= data_inicio]
+
+    if pd.notnull(data_fim):
+        df = df[df["LAST UPDATE"] <= data_fim]
+
+    # 🧹 Limpeza final dos dados (remove duplicatas e linhas vazias)
+    df = df.drop_duplicates().dropna().reset_index(drop=True)
+
+    return df
+
+
+def gerar_grafico(df: pd.DataFrame):
     """
-    Explicar a função. Dizer o tipo de dado que são os parametros
-    Forma de data: YYYY-MM-DD
+    Gera um gráfico de dispersão interativo utilizando Plotly,
+    mostrando os indicadores ao longo do tempo.
+
+    Parâmetros:
+    -----------
+    df : pd.DataFrame
+        DataFrame contendo os dados dos metadados filtrados.
+
+    Retorno:
+    --------
+    plotly.graph_objects.Figure ou None
+        Objeto de figura Plotly. Retorna None se o DataFrame estiver vazio.
     """
+    if df.empty:
+        return None
 
-    if data_inicio is None and data_final is None:
-        raise ValueError("Data de início e data final não podem ser ambas nulas.")
-    
-    series = ipea.metadata()
-    series["LAST UPDATE"] = pd.to_datetime(series["LAST UPDATE"],format="ISO8601")
-    series["LAST UPDATE"] = pd.to_datetime(series["LAST UPDATE"], errors='coerce')
+    # Cria gráfico de dispersão
+    fig = px.scatter(
+        df,
+        x="LAST UPDATE",  # Eixo X → Data da última atualização
+        y="CODE",          # Eixo Y → Código do indicador
+        color="SOURCE",    # Cores por organização fornecedora dos dados
+        title="Indicadores ao longo do tempo",
+        hover_data=["TITLE", "UNIT", "FREQUENCY"],  # Informações ao passar o mouse
+        labels={"LAST UPDATE": "Data", "CODE": "Código do Indicador"},
+        template="plotly_dark"  # Tema escuro
+    )
 
-    # A partir de data_inicio e antes de data_final
-    if data_inicio is not None and data_final is not None:
-        df_filtrado = series[(series["LAST UPDATE"] >= data_inicio) & (series["LAST UPDATE"] <= data_final)]
-        
-    # Após data_inicio
-    if data_final is None:
-        df_filtrado = series[(series["LAST UPDATE"] >= data_inicio)]
+    # Personaliza tamanho dos marcadores
+    fig.update_traces(marker=dict(size=10))
 
-    # Antes data_final
-    if data_inicio is None:
-        df_filtrado = series[(series["LAST UPDATE"] <= data_final)]
+    # Define altura do gráfico
+    fig.update_layout(height=600)
 
-    return df_filtrado 
-    
-    
+    return fig
